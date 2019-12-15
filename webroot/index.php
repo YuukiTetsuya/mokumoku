@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
 
 <body>
     <p>test</p>
+    <?= print "{$_SERVER['DOCUMENT_ROOT']}/mokumoku/webroot/index.php"; ?>
 </body>
 
 </html>
