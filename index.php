@@ -1,2 +1,3 @@
 <?php
-require_once 'webroot/index.php';
+$webroot = $_SERVER['DOCUMENT_ROOT'];
+include($webroot."/mokumoku/webroot/index.php");
