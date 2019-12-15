@@ -1,1 +1,2 @@
-<?= require_once 'webroot/index.php';
+<?php
+require_once 'webroot/index.php';
