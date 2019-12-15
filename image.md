@@ -74,3 +74,22 @@
     - styles.css
   - js
     - index.js
+
+### 開発環境
+
+- LAMP環境
+  - XAMPP
+    - 言語
+      - php 7.0.1
+    - サーバー
+      - Apache/2.4.18
+    - RDBMS
+      - MySQL 15.1
+      - MariaDB osx10.6
+- 機能環境
+  - パッケージ管理
+    - Composer
+  - テンプレートエンジン
+    - smarty
+- バージョン管理
+  - Git Flow
