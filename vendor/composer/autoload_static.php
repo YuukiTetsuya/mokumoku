@@ -6,6 +6,20 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit812e7988eb82f97cebb953fef78bf6ec
 {
+    public static $files = array (
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+    );
+
+    public static $prefixesPsr0 = array (
+        'H' => 
+        array (
+            'HTMLPurifier' => 
+            array (
+                0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Smarty' => __DIR__ . '/..' . '/smarty/smarty/libs/Smarty.class.php',
         'SmartyBC' => __DIR__ . '/..' . '/smarty/smarty/libs/SmartyBC.class.php',
@@ -185,6 +199,7 @@ class ComposerStaticInit812e7988eb82f97cebb953fef78bf6ec
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixesPsr0 = ComposerStaticInit812e7988eb82f97cebb953fef78bf6ec::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit812e7988eb82f97cebb953fef78bf6ec::$classMap;
 
         }, null, ClassLoader::class);
