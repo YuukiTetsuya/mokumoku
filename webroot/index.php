@@ -1,8 +1,7 @@
 <?php
-require_once 'vendor/autoload.php';
-$s = new Smarty();
-$s->template_dir = 'view/templates';
-$s->compile_dir = 'view/templates_c';
-$s->assign('title', 'MokuMokuAppへようこそ');
+require_once 'app/Controler/class/MySmarty.class.php';
+
+$s = new MySmarty();
 $s->assign('message', 'このサイトは、もくもく会進行を手助けします');
-$s->display('view/templates/index.tpl');
+$s->assign('agenda', 'アジェンダ入力');
+$s->d();
