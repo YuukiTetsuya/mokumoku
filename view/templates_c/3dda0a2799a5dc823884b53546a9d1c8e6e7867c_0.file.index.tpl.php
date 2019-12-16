@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-16 22:01:12
+/* Smarty version 3.1.34-dev-7, created on 2019-12-17 04:35:59
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df78018ae8d59_64955829',
+  'unifunc' => 'content_5df7dc9fd71739_68139954',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dda0a2799a5dc823884b53546a9d1c8e6e7867c' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl',
-      1 => 1576501264,
+      1 => 1576524958,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df78018ae8d59_64955829 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df7dc9fd71739_68139954 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 
@@ -29,6 +29,7 @@ function content_5df78018ae8d59_64955829 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="webroot/css/styles.css">
+    <link rel="stylesheet" href="webroot/css/slick.css">
     <title><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 へようこそ</title>
 </head>
@@ -57,12 +58,19 @@ function content_5df78018ae8d59_64955829 (Smarty_Internal_Template $_smarty_tpl)
                 <input type="submit" value="送信">
             </form>
         </div>
+        <ul class="slider">
+            <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
+            <li><a href="#"><img src="webroot/image/php.jpg" alt="image02"></a></li>
+        </ul>
     </main>
     <?php echo '<script'; ?>
  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  type="text/javascript" src="webroot/js/index.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="webroot/js/slick.js"><?php echo '</script'; ?>
 >
 </body>
 
