@@ -12,10 +12,11 @@ $s->assign(
         'contents' => 'コンテンツ',
         'rule' => 'ルール',
         'wifi' => 'WiFi情報',
-        'ssi    d' => 'SSID',
+        'ssid' => 'SSID',
         'pass' => 'PASS',
     ]
 );
+$s->assign('wifimsg', '下記を入力してください（片方のみ可）');
 $s->assign('leftlogo', '左サイトロゴ');
 $s->assign('rightlogo', '右サイトMENU');
 $s->d();

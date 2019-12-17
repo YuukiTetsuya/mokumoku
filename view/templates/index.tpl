@@ -25,7 +25,7 @@
     <main>
         <div class="container">
             <form action="view/test.php" method="POST">
-                <table border="2" cellpadding="6" cellspacing="5">
+                <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
                         <div class="subtitle agenda-title">{$agendas.title}</div>
                     </caption>
@@ -34,19 +34,30 @@
                     {continue}
                     {/if}
                     <tr>
+                        {if $agendakey eq 'wifi'}
+                        <td>{$agendas.wifi}</td>
+                        <td colspan="2" id="wifimsg">{$wifimsg}</td>
+                        {continue}
+                        {/if}
                         <td>{$agenda}</td>
-                        <td><input type="text" name="{$agendakey}"></td>
+                        <td><input type="
+                            {if $agendakey eq 'contents'}
+                                textarea
+                            {else}
+                                text
+                            {/if}" name="{$agendakey}">
+                        </td>
                     </tr>
                     {/foreach}
                 </table>
                 <input type="text" name="id">
                 <input type="submit" value="送信">
             </form>
+            <ul class="slider">
+                <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
+                <li><a href="#"><img src="webroot/image/php.jpg" alt="image02"></a></li>
+            </ul>
         </div>
-        <ul class="slider">
-            <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
-            <li><a href="#"><img src="webroot/image/php.jpg" alt="image02"></a></li>
-        </ul>
     </main>
     <footer>
         <div class="container">

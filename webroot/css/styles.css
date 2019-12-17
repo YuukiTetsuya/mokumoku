@@ -24,12 +24,25 @@ header>.container>.title {
 
 .container {
     margin: 0 auto;
-    padding: 0 100px;
+    padding: 0 300px;
 }
 
 main {
     background-color: #f7f7f7;
     color: #545454;
+}
+
+main>.container table #wifimsg {
+    border: none;
+}
+
+main>.container table input {
+    font-size: 100%;
+    width: 100%;
+    height: 30px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .agenda-title {
