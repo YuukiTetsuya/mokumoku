@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-17 04:35:59
+/* Smarty version 3.1.34-dev-7, created on 2019-12-18 01:22:21
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df7dc9fd71739_68139954',
+  'unifunc' => 'content_5df900bdf20862_36550482',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dda0a2799a5dc823884b53546a9d1c8e6e7867c' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl',
-      1 => 1576524958,
+      1 => 1576599270,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df7dc9fd71739_68139954 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df900bdf20862_36550482 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 
@@ -45,15 +45,37 @@ function content_5df7dc9fd71739_68139954 (Smarty_Internal_Template $_smarty_tpl)
                 <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['rightlogo']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 
             </div>
-            <h1 id="title"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
-</h1>
+            <div class="title t-grafic"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['message']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+</div>
         </div>
     </header>
     <main>
         <div class="container">
-            <label for="agenda"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agenda']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
-</label>
             <form action="view/test.php" method="POST">
+                <table border="2" cellpadding="6" cellspacing="5">
+                    <caption>
+                        <div class="subtitle agenda-title"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agendas']->value['title'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+</div>
+                    </caption>
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['agendas']->value, 'agenda', false, 'agendakey');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['agendakey']->value => $_smarty_tpl->tpl_vars['agenda']->value) {
+?>
+                    <?php if ($_smarty_tpl->tpl_vars['agendakey']->value == 'title') {?>
+                    <?php continue 1;?>
+                    <?php }?>
+                    <tr>
+                        <td><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agenda']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+</td>
+                        <td><input type="text" name="<?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agendakey']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+"></td>
+                    </tr>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                </table>
                 <input type="text" name="id">
                 <input type="submit" value="送信">
             </form>
@@ -63,6 +85,12 @@ function content_5df7dc9fd71739_68139954 (Smarty_Internal_Template $_smarty_tpl)
             <li><a href="#"><img src="webroot/image/php.jpg" alt="image02"></a></li>
         </ul>
     </main>
+    <footer>
+        <div class="container">
+            <div class="title t-grafic"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['message']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+</div>
+        </div>
+    </footer>
     <?php echo '<script'; ?>
  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
 >
@@ -73,7 +101,6 @@ function content_5df7dc9fd71739_68139954 (Smarty_Internal_Template $_smarty_tpl)
  type="text/javascript" src="webroot/js/slick.js"><?php echo '</script'; ?>
 >
 </body>
-
 
 </html><?php }
 }

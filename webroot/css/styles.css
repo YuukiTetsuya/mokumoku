@@ -17,8 +17,9 @@ header {
     float: right;
 }
 
-header > .container > h1 {
+header>.container>.title {
     text-align: center;
+    font-size: 26px;
 }
 
 .container {
@@ -29,4 +30,12 @@ header > .container > h1 {
 main {
     background-color: #f7f7f7;
     color: #545454;
+}
+
+.agenda-title {
+    float: left;
+}
+
+.subtitle {
+    font-size: 24px;
 }
