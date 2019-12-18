@@ -24,7 +24,7 @@
     </header>
     <main>
         <div class="container">
-            <form action="view/test.php" method="POST">
+            <form action="view/post.php" method="POST">
                 <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
                         <div class="subtitle agenda-title">{$agendas.title}</div>
