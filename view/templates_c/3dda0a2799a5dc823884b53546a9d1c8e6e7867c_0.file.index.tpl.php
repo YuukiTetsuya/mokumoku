@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-19 09:26:37
+/* Smarty version 3.1.34-dev-7, created on 2019-12-19 13:49:06
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfac3bd4c4086_45819966',
+  'unifunc' => 'content_5dfb01424f0d74_72402639',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dda0a2799a5dc823884b53546a9d1c8e6e7867c' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl',
-      1 => 1576714853,
+      1 => 1576730944,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:head_common.tpl' => 1,
   ),
 ),false)) {
-function content_5dfac3bd4c4086_45819966 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfb01424f0d74_72402639 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender('file:head_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main>
@@ -32,6 +32,7 @@ function content_5dfac3bd4c4086_45819966 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="subtitle agenda-title"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agendas']->value['title'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 </div>
                     </caption>
+                    <?php $_smarty_tpl->_assignInScope('dot', ".");?>
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['agendas']->value, 'agenda', false, 'agendakey');
 if ($_from !== null) {
@@ -56,6 +57,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['agendakey']->value => $_smarty_tpl->t
                             <?php } else { ?>
                                 text
                             <?php }?>" name="<?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agendakey']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+" placeholder="<?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['frontValue']->value[$_smarty_tpl->tpl_vars['agendakey']->value], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 ">
                         </td>
                     </tr>
@@ -64,8 +66,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['agendakey']->value => $_smarty_tpl->t
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </table>
-                <input type="text" name="id">
-                <input type="submit" value="送信">
+                <input type="submit" value="作成する" class="button">
             </form>
             <ul class="slider">
                 <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>

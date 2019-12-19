@@ -6,6 +6,7 @@
                     <caption>
                         <div class="subtitle agenda-title">{$agendas.title}</div>
                     </caption>
+                    {assign var="dot" value="."}
                     {foreach from=$agendas item=$agenda key=$agendakey}
                     {if $agendakey eq 'title'}
                     {continue}
@@ -22,13 +23,12 @@
                                 textarea
                             {else}
                                 text
-                            {/if}" name="{$agendakey}">
+                            {/if}" name="{$agendakey}" placeholder="{$frontValue.$agendakey}">
                         </td>
                     </tr>
                     {/foreach}
                 </table>
-                <input type="text" name="id">
-                <input type="submit" value="送信">
+                <input type="submit" value="作成する" class="button">
             </form>
             <ul class="slider">
                 <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
