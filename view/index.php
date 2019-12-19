@@ -2,7 +2,6 @@
 require_once 'app/utility/MySmartyAutoload.php';
 
 $s = new MySmarty();
-$s->assign('message', 'MokuMokuApp');
 $s->assign(
     'agendas',
     [
@@ -17,6 +16,13 @@ $s->assign(
     ]
 );
 $s->assign('wifimsg', '下記を入力してください（片方のみ可）');
-$s->assign('leftlogo', '左サイトロゴ');
-$s->assign('rightlogo', '右サイトMENU');
+$url = $_SERVER['REQUEST_URI'];
+if ($url == '/mokumoku/') {
+    $s->assign('stylesHeaderIndex', 'webroot/css/header.css');
+    $s->assign('stylesIndex', 'webroot/css/styles.css');
+    $s->assign('slickIndex', 'webroot/css/slick.css');
+} else {
+    $s->assign('stylesHeader', '../webroot/css/header.css');
+    $s->assign('styles', '../webroot/css/styles.css');
+}
 $s->d();

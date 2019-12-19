@@ -1,57 +1,32 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-18 10:09:24
+/* Smarty version 3.1.34-dev-7, created on 2019-12-19 09:26:37
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df97c447958b6_55972338',
+  'unifunc' => 'content_5dfac3bd4c4086_45819966',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dda0a2799a5dc823884b53546a9d1c8e6e7867c' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl',
-      1 => 1576631353,
+      1 => 1576714853,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:head_common.tpl' => 1,
   ),
 ),false)) {
-function content_5df97c447958b6_55972338 (Smarty_Internal_Template $_smarty_tpl) {
-?><!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="webroot/css/styles.css">
-    <link rel="stylesheet" href="webroot/css/slick.css">
-    <title><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
-へようこそ</title>
-</head>
-
-<body>
-    <header>
-        <div class="container">
-            <div class="header-left">
-                <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['leftlogo']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
-
-            </div>
-            <div class="header-right">
-                <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['rightlogo']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
-
-            </div>
-            <div class="title t-grafic"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['message']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
-</div>
-        </div>
-    </header>
+function content_5dfac3bd4c4086_45819966 (Smarty_Internal_Template $_smarty_tpl) {
+?>    <?php $_smarty_tpl->_subTemplateRender('file:head_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <main>
         <div class="container">
-            <form action="view/post.php" method="POST">
+            <form action="app/model/insert_agendas.php" method="POST">
                 <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
                         <div class="subtitle agenda-title"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agendas']->value['title'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
@@ -113,7 +88,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php echo '<script'; ?>
  type="text/javascript" src="webroot/js/slick.js"><?php echo '</script'; ?>
 >
-</body>
+    </body>
 
-</html><?php }
+    </html><?php }
 }

@@ -11,6 +11,8 @@ class MySmarty extends Smarty
         $this->default_modifiers = [ 'escape:"htmlall"' ];
 
         $this->assign('title', 'MokuMokuApp');
+        $this->assign('leftlogo', '左サイトロゴ');
+        $this->assign('rightmenu', '右サイトMENU');
         $this->assign('docroot', $_SERVER['DOCUMENT_ROOT']);
     }
     //displayメソッドを定義

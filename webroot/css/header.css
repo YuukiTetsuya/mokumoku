@@ -1,0 +1,16 @@
+header {
+    height: 50px;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-right {
+    float: right;
+}
+
+header>.container>.title {
+    text-align: center;
+    font-size: 26px;
+}
