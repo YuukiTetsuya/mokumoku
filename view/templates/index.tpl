@@ -17,13 +17,14 @@
                         <td colspan="2" id="wifimsg">{$wifimsg}</td>
                         {continue}
                         {/if}
-                        <td>{$agenda}</td>
-                        <td><input type="
+                        <td {if $agendakey eq 'contents' } valign="top" {elseif $agendakey eq 'pass' } class="pass"
+                            {/if}>{$agenda} </td> <td>
                             {if $agendakey eq 'contents'}
-                                textarea
+                            <textarea name="{$agendakey}" id="contents" cols="60" rows="10"
+                                placeholder="{$frontValue.$agendakey}"></textarea>
                             {else}
-                                text
-                            {/if}" name="{$agendakey}" placeholder="{$frontValue.$agendakey}">
+                            <input type="text" name="{$agendakey}" placeholder="{$frontValue.$agendakey}">
+                            {/if}
                         </td>
                     </tr>
                     {/foreach}

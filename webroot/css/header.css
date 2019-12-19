@@ -13,4 +13,14 @@ header {
 header>.container>.title {
     text-align: center;
     font-size: 26px;
+    font-weight: bold;
+}
+
+header>.container>.title a:visited {
+    color: #722F2F;
+}
+
+a {
+    color: #722F2F;
+    text-decoration: none;
 }

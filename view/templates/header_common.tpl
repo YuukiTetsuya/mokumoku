@@ -5,5 +5,5 @@
         <div class="header-right">
             {$rightmenu}
         </div>
-        <div class="title t-grafic">{$title}</div>
+        <div class="title t-grafic"><a href="/mokumoku/">{$title}</a></div>
     </div>
