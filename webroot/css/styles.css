@@ -11,6 +11,8 @@ body {
 }
 
 main {
+    height: 100%;
+    padding-top: 70px;
     background-color: #f7f7f7;
     color: #545454;
 }

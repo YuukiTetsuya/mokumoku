@@ -39,7 +39,7 @@
     </main>
     <footer>
         <div class="container">
-            <div class="title t-grafic">{$message}</div>
+            <div class="title t-grafic">{$title}</div>
         </div>
     </footer>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
