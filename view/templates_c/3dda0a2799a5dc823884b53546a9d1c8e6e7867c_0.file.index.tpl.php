@@ -1,27 +1,29 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-20 00:31:26
+/* Smarty version 3.1.34-dev-7, created on 2019-12-20 23:09:31
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfb97ce1e45a3_27919806',
+  'unifunc' => 'content_5dfcd61b41f405_69431071',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dda0a2799a5dc823884b53546a9d1c8e6e7867c' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl',
-      1 => 1576769451,
+      1 => 1576850962,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:head_common.tpl' => 1,
+    'file:footer_common.tpl' => 1,
+    'file:js_common.tpl' => 1,
   ),
 ),false)) {
-function content_5dfb97ce1e45a3_27919806 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfcd61b41f405_69431071 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender('file:head_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main>
@@ -77,22 +79,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </ul>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <div class="title t-grafic"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
-</div>
-        </div>
-    </footer>
-    <?php echo '<script'; ?>
- type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- type="text/javascript" src="webroot/js/index.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- type="text/javascript" src="webroot/js/slick.js"><?php echo '</script'; ?>
->
-    </body>
-
-    </html><?php }
+    <?php $_smarty_tpl->_subTemplateRender('file:footer_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+    <?php $_smarty_tpl->_subTemplateRender('file:js_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

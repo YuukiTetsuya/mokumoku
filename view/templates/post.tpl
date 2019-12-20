@@ -2,11 +2,10 @@
     <main>
         <div class="container">
             <h1>{$create}</h1>
-            {$agendas.1.mokumokuname}
-            {$agendas.2.mokumokuname}
-            {$agendas.1.mokumokuname}
+            {$agendas.1.mokumokuname}<br>
+            {$agendas.1.contents}<br>
+            {$agendas.1.mokumokuname}<br>
         </div>
     </main>
-    </body>
-
-    </html>
+    {include file='footer_common.tpl'}
+    {include file='js_common.tpl'}

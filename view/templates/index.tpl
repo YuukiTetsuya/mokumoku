@@ -37,14 +37,5 @@
             </ul>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <div class="title t-grafic">{$title}</div>
-        </div>
-    </footer>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="webroot/js/index.js"></script>
-    <script type="text/javascript" src="webroot/js/slick.js"></script>
-    </body>
-
-    </html>
+    {include file='footer_common.tpl'}
+    {include file='js_common.tpl'}

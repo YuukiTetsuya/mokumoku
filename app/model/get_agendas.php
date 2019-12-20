@@ -2,9 +2,9 @@
 require_once 'config.php';
 require_once 'app/utility/Encode.php';
 
-class getAllAgendas
+class Agendas
 {
-    // agendasテーブルを全取得する関数
+    // agendasテーブルを全取得するメソッド
     public function getAgendas()
     {
         try {
