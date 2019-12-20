@@ -5,7 +5,7 @@ require_once 'app/utility/Encode.php';
 class Agendas
 {
     // agendasテーブルを全取得するメソッド
-    public function getAgendas()
+    public function getAllAgendas()
     {
         try {
             $db = getDb();
