@@ -1,18 +1,24 @@
 <?php
+namespace app\model;
+
 require_once 'config.php';
 require_once 'app/utility/Encode.php';
 
+use \PDO;
+use \PDOException;
+
 class Agendas
 {
-    // agendasテーブルを全取得するメソッド
-    public function getAllAgendas()
+    // agendasテーブルを降順ソートし、引数に指定した最新○件のレコードを取得する
+    public function selectAgendas(int $limit)
     {
         try {
             $db = getDb();
-            $stt = $db->prepare('SELECT * FROM agendas');
+            $stt = $db->prepare('SELECT * FROM agendas ORDER BY id DESC LIMIT :limit');
+            $stt->bindParam(':limit', $limit, PDO::PARAM_INT);
             $stt->execute();
             $i = 1;
-            // agendsテーブルからfetchし、二次元配列[id番号][カラム名]に代入
+            // agendsテーブルからfetchし、二次元配列[id番号][カラム名]に代入 降順ソート済の為、最新データほど$iの番号が若い
             while ($data = $stt->fetch(PDO::FETCH_ASSOC)) {
                 $item[$i]['id'] = e($data['id']);
                 $item[$i]['mokumokuname'] = e($data['mokumokuname']);
@@ -24,7 +30,6 @@ class Agendas
                 $i++;
             };
         } catch (PDOException $e) {
-            // エラー時;
             "エラーが発生しました:{$e->getMessage()}";
         }
         return $item;

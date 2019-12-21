@@ -1,5 +1,9 @@
 <?php
+namespace app\Controller;
+
 require_once 'vendor/autoload.php';
+
+use \Smarty;
 
 class MySmarty extends Smarty
 {

@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+
+RewriteBase /
+RewriteCond %{REQUEST_URI} index(.*)\.html
+RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
+RewriteCond %{REQUEST_URI} index(.*)\.php
+RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
