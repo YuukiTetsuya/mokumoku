@@ -1,0 +1,30 @@
+header {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-right {
+    float: right;
+}
+
+header>.container>.title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+header>.container>.title a:visited {
+    color: #722F2F;
+}
+
+a {
+    color: #722F2F;
+    text-decoration: none;
+}
