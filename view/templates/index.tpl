@@ -29,7 +29,7 @@
                     </tr>
                     {/foreach}
                 </table>
-                <input type="submit" value="ä½œæˆã™ã‚‹" class="button">
+                <input type="submit" value="ì¬‚·‚é" class="button">
             </form>
             <ul class="slider">
                 <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
