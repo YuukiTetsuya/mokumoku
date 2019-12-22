@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-22 11:18:01
+/* Smarty version 3.1.34-dev-7, created on 2019-12-22 12:14:21
   from '/var/www/html/mokumoku/view/templates/styles_common.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfed259ec9c31_50578001',
+  'unifunc' => 'content_5dfedf8d418685_64067262',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfed259ec9c31_50578001 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfedf8d418685_64067262 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- トップページ読み込みであればIndex用を、それ以外であれば全体用cssを読み込み -->
 <?php if ($_SERVER['REQUEST_URI'] == '/mokumoku/') {?>
 <link rel="stylesheet" href="webroot/css/styles.css">

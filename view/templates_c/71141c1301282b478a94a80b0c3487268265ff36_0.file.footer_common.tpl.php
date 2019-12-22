@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-22 11:18:01
+/* Smarty version 3.1.34-dev-7, created on 2019-12-22 12:14:21
   from '/var/www/html/mokumoku/view/templates/footer_common.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfed259ecfef3_09824877',
+  'unifunc' => 'content_5dfedf8d41e890_01455305',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfed259ecfef3_09824877 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfedf8d41e890_01455305 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <footer>
         <div class="container">
             <div class="title t-grafic"><?php echo htmlentities($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'ISO-8859-1', true);?>

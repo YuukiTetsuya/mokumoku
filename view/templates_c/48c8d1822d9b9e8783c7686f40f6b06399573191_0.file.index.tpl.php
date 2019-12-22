@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-22 11:18:01
+/* Smarty version 3.1.34-dev-7, created on 2019-12-22 12:14:21
   from '/var/www/html/mokumoku/view/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfed259ebf2f6_15415039',
+  'unifunc' => 'content_5dfedf8d40dc20_97965388',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '48c8d1822d9b9e8783c7686f40f6b06399573191' => 
     array (
       0 => '/var/www/html/mokumoku/view/templates/index.tpl',
-      1 => 1576976942,
+      1 => 1576984313,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:js_common.tpl' => 1,
   ),
 ),false)) {
-function content_5dfed259ebf2f6_15415039 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfedf8d40dc20_97965388 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender('file:head_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main>
@@ -71,7 +71,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['agendakey']->value => $_smarty_tpl->t
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </table>
-                <input type="submit" value="ä½œæˆ�ã�™ã‚‹" class="button">
+                <input type="submit" value="�쐬����" class="button">
             </form>
             <ul class="slider">
                 <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
