@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-19 09:59:11
-  from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/head_common.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2019-12-22 11:18:01
+  from '/var/www/html/mokumoku/view/templates/head_common.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfacb5f870dc7_09466483',
+  'unifunc' => 'content_5dfed259ec5670_51952829',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '79d5f643bfef9b19d1d4310a3107d13b81359cdc' => 
+    'd2a0795a48164461d95b12b4559913fdd23c0abd' => 
     array (
-      0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/head_common.tpl',
-      1 => 1576717133,
+      0 => '/var/www/html/mokumoku/view/templates/head_common.tpl',
+      1 => 1576976942,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header_common.tpl' => 1,
   ),
 ),false)) {
-function content_5dfacb5f870dc7_09466483 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfed259ec5670_51952829 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 
@@ -32,7 +32,7 @@ function content_5dfacb5f870dc7_09466483 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php $_smarty_tpl->_subTemplateRender('file:styles_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <title><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+    <title><?php echo htmlentities($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'ISO-8859-1', true);?>
 へようこそ</title>
 </head>
 

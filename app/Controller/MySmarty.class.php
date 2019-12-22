@@ -12,7 +12,7 @@ class MySmarty extends Smarty
         parent::__construct();
         $this->template_dir = $_SERVER['DOCUMENT_ROOT'].'/mokumoku/view/templates';
         $this->compile_dir = $_SERVER['DOCUMENT_ROOT'].'/mokumoku/view/templates_c';
-        $this->default_modifiers = [ 'escape:"htmlall"' ];
+ 	$this->default_modifiers = [ 'escape:"htmlall"' ];
 
         $this->assign('title', 'MokuMokuApp');
         $this->assign('leftlogo', '左サイトロゴ');
