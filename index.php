@@ -1,21 +1,13 @@
 <?php
 require_once 'app/Controller/MySmarty.class.php';
+require_once 'app/utility/Agendas.php';
 
 use app\Controller\MySmarty;
 
 $s = new MySmarty();
 $s->assign(
     'agendas',
-    [
-        'title' => 'もくもく会概要',
-        'mokumokuname' => 'もくもく会名',
-        'schedule' => 'タイムスケジュール',
-        'contents' => 'コンテンツ',
-        'rule' => 'ルール',
-        'wifi' => 'WiFi情報',
-        'ssid' => 'SSID',
-        'pass' => 'PASS',
-    ]
+    $agendas
 );
 $s->assign(
     'frontValue',

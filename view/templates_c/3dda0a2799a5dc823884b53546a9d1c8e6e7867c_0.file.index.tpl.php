@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-22 17:08:26
+/* Smarty version 3.1.34-dev-7, created on 2019-12-23 09:18:20
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dff247a0b6143_28719792',
+  'unifunc' => 'content_5e0007cceae381_55711830',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dda0a2799a5dc823884b53546a9d1c8e6e7867c' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl',
-      1 => 1576984719,
+      1 => 1577060296,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:js_common.tpl' => 1,
   ),
 ),false)) {
-function content_5dff247a0b6143_28719792 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e0007cceae381_55711830 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender('file:head_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main>
@@ -73,6 +73,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </table>
                 <input type="submit" value="作成する" class="button">
             </form>
+            <p><a href="view/post.php">post.php</a></p>
             <ul class="slider">
                 <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
                 <li><a href="#"><img src="webroot/image/php.jpg" alt="image02"></a></li>

@@ -42,20 +42,25 @@ class AgendasController extends Agendas
         $this->setBase($param);
     }
 
-    // ゲッター セット値が無効である場合、初期値（コンストラクタ値）でresultを返す
+    // セットした値が0以外であれば10を返す
     public function getTenAgendas()
     {
         if (!$this->resultTen == 0) {
             return $this->resultTen;
         }
+
+        // セット値が無効である場合、初期値（コンストラクタ値）でresultを返す
         return $this->result;
     }
 
+    // セットした値が0であれば1を返す
     public function getOneAgendas()
     {
         if (!$this->resultOne == 0) {
             return $this->resultOne;
         }
+        // セット値が無効である場合、初期値（コンストラクタ値）でresultを返す
+
         return $this->result;
     }
 }
