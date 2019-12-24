@@ -6,18 +6,18 @@
                 <div class="post-main">
                     <div class="post-left">
                         <div class="subtitle" id="weight">
-                            {$post.mokumokuname}
+                            {$tenAgendas.1.mokumokuname}
                         </div>
                         <div class="schedule">
-                            開催時間：{$post.schedule}
+                            開催時間：{$tenAgendas.1.schedule}
                         </div>
                         <div class="contents">
                             コンテンツ
-                            <div class="description">{$post.contents}</div>
+                            <div class="description">{$tenAgendas.1.contents}</div>
                         </div>
                         <div class="rule">
                             ルール
-                            <div class="description">{$post.rule}</div>
+                            <div class="description">{$tenAgendas.1.rule}</div>
                         </div>
                         <div class="edit">編集</div>
                     </div>
@@ -25,15 +25,13 @@
                         <span id="wifi">
                             <span class="subtitle" id="weight">Wifi</span><br>
                             <span class="ssid-pass">
-                                {$agendas.ssid} {$post.ssid}<br>
-                                {$agendas.pass} {$post.pass}
+                                {$agendas.ssid} {$tenAgendas.1.ssid}<br>
+                                {$agendas.pass} {$tenAgendas.1.pass}
                             </span>
                         </span>
                     </div>
                     <div class="post-bottom">
-                        {$post.mokumokuname}<br>
-                        $_GETで送ったuniqなid
-                        {$post.post_id}
+                        {$tenAgendas.1.post_id}
                     </div>
                 </div>
             </div>

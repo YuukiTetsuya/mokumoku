@@ -13,11 +13,10 @@ if (isset($_GET['id'])) {
     $post_id = null;
 }
 
-$agendaPost = new AgendasPostController($post_id);
 $s = new MySmarty();
+$agendaPost = new AgendasPostController($post_id);
 
 $s->assign('agendas', $agendas);
-
 $s->assign('create', 'もくもく会が作成されました');
 $s->assign('post', $agendaPost->getPostAgendas());
 $s->d();

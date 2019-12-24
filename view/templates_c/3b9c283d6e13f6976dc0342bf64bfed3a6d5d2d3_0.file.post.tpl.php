@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-24 10:51:25
+/* Smarty version 3.1.34-dev-7, created on 2019-12-24 11:14:08
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/post.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e016f1d32fe00_17215623',
+  'unifunc' => 'content_5e017470eb5417_77460629',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b9c283d6e13f6976dc0342bf64bfed3a6d5d2d3' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/post.tpl',
-      1 => 1577152283,
+      1 => 1577153645,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:js_common.tpl' => 1,
   ),
 ),false)) {
-function content_5e016f1d32fe00_17215623 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e017470eb5417_77460629 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender('file:head_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main>
@@ -58,10 +58,10 @@ function content_5e016f1d32fe00_17215623 (Smarty_Internal_Template $_smarty_tpl)
                             <span class="subtitle" id="weight">Wifi</span><br>
                             <span class="ssid-pass">
                                 <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agendas']->value['ssid'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
- <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['oneAgendas']->value[1]['ssid'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+ <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['post']->value['ssid'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 <br>
                                 <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agendas']->value['pass'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
- <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['oneAgendas']->value[1]['pass'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+ <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['post']->value['pass'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 
                             </span>
                         </span>
