@@ -17,6 +17,12 @@ $s = new MySmarty();
 $agendaPost = new AgendasPostController($post_id);
 
 $s->assign('agendas', $agendas);
-$s->assign('create', 'もくもく会が作成されました');
 $s->assign('post', $agendaPost->getPostAgendas());
+// 作成時のみ、作成をお知らせするメッセージを追加
+session_start();
+if ($_SESSION['created']) {
+    $s->assign('create', 'もくもく会が作成されました');
+};
+session_destroy();
+
 $s->d();

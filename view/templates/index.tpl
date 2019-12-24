@@ -1,7 +1,7 @@
     {include file='head_common.tpl'}
     <main>
         <div class="container">
-            <form action="app/model/insert_agendas.php?post_id={$frontValue.post_id}" method="POST">
+            <form action="app/model/insert_agendas.php" method="POST">
                 <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
                         <div class="subtitle agenda-title">{$agendas.title}</div>
@@ -29,6 +29,7 @@
                     </tr>
                     {/foreach}
                 </table>
+                <input type="hidden" name="post_id" value="{$frontValue.post_id}">
                 <input type="submit" value="作成する" class="button">
             </form>
             <p><a href="view/post.php">post.php</a></p>

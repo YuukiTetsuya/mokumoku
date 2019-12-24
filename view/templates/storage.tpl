@@ -3,7 +3,7 @@
         <div class="container">
             <div class="post">
                 <h1>{$titleView}</h1>
-                <div class="post-main">
+                <div class="post-main storage">
                     <div class="post-left">
                         <ol>
                             {foreach $tenAgendas as $all}

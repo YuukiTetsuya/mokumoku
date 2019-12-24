@@ -132,6 +132,10 @@ main>.container>.post>.post-main {
     padding-left: 150px;
 }
 
+main>.container>.post>.storage {
+    height: 600px;
+}
+
 main>.container>.post>.post-main>.post-left {
     float: left;
 }

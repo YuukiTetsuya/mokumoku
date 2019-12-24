@@ -2,8 +2,8 @@
 require_once 'config.php';
 
 // post_idが送信されているかどうか確認。なければ空を代入(nullはpost_idには入らないので、例外処理される)
-if (isset($_GET['post_id'])) {
-    $post_id = $_GET['post_id'];
+if (isset($_POST['post_id'])) {
+    $post_id = $_POST['post_id'];
 } else {
     $post_id = null;
 }
@@ -26,4 +26,10 @@ try {
     // エラー時;
     print "エラーが発生しました:{$e->getMessage()}";
 }
+
+// 作成時のみcreatedをtrueにする
+session_start();
+$_SESSION = [];
+$_SESSION['created'] = true;
+
 header("location: ../../view/post.php?id=$post_id");
