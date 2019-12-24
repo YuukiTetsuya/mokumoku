@@ -29,7 +29,6 @@ try {
 
 // 作成時のみcreatedをtrueにする
 session_start();
-$_SESSION = [];
 $_SESSION['created'] = true;
 
 header("location: ../../view/post.php?id=$post_id");

@@ -23,6 +23,20 @@ session_start();
 if ($_SESSION['created']) {
     $s->assign('create', 'もくもく会が作成されました');
 };
+// セッション変数とセッションクッキー（ID受け渡しのためのクッキー）とセッション自体を破棄する
+$_SESSION = [];
+if (isset($_COOKIE[session_name()])) {
+    $cparam = session_get_cookie_params();
+    setcookie(
+        session_name(),
+        '',
+        time() - 3600,
+        $cparam['path'],
+        $cparam['domain'],
+        $cparam['secure'],
+        $cparam['httponly']
+    );
+};
 session_destroy();
 
 $s->d();
