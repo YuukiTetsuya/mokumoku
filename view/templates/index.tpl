@@ -29,12 +29,8 @@
                     </tr>
                     {/foreach}
                 </table>
-<<<<<<< HEAD
-                <input type="submit" value="�쐬����" class="button">
-=======
                 <input type="hidden" name="post_id" value="{$frontValue.post_id}">
                 <input type="submit" value="作成する" class="button">
->>>>>>> develop
             </form>
             <p><a href="view/post.php">post.php</a></p>
             <p><a href="view/storage.php">もくもくデータベース</a></p>
