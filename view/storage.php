@@ -13,7 +13,7 @@ $agendaBase->setAgendas(10);
 $agendaBase->setAgendas(1);
 
 $s->assign('agendas', $agendas);
-$s->assign('create', 'もくもく会が作成されました');
+$s->assign('titleView', 'もくもくデータベース');
 
 /*  テンプレート変数$変数名の使い方 二次元配列となっており、下記で出力可
     $変数名.[id番号].[カラム名] */

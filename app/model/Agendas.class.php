@@ -51,6 +51,7 @@ class Agendas
                 $item[$i]['rule'] = e($data['rule']);
                 $item[$i]['ssid'] = e($data['ssid']);
                 $item[$i]['pass'] = e($data['pass']);
+                $item[$i]['post_id'] = e($data['post_id']);
                 $i++;
             };
         } catch (PDOException $e) {

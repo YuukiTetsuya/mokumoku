@@ -25,4 +25,5 @@ $s->assign(
 ]
 );
 $s->assign('wifimsg', '下記を入力してください（片方のみ可）');
+$s->assign('titleView', 'MokuMokuAppへようこそ');
 $s->d();

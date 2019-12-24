@@ -31,9 +31,6 @@
                         </span>
                     </div>
                     <div class="post-bottom">
-                        {$post.mokumokuname}<br>
-                        $_GETで送ったuniqなid
-                        {$post.post_id}
                     </div>
                 </div>
             </div>
