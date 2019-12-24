@@ -12,9 +12,16 @@ try {
     // db(PDOオブジェクト)に対し、各カラムにユーザー入力値を挿入する
     $db = getDb();
     $id = null;
+    if ($_POST['mokumokuname'] == '') {
+        $mokumokuname = null;
+        header("location: ../../");
+        die('もくもく会名を入力してください');
+    } else {
+        $mokumokuname = $_POST['mokumokuname'];
+    }
     $stt = $db->prepare('INSERT INTO agendas(id, mokumokuname, schedule, contents, rule, ssid, pass, post_id) VALUES(:id, :mokumokuname, :schedule, :contents, :rule, :ssid, :pass, :post_id)');
     $stt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stt->bindValue(':mokumokuname', $_POST['mokumokuname'], PDO::PARAM_STR);
+    $stt->bindValue(':mokumokuname', $mokumokuname, PDO::PARAM_STR);
     $stt->bindValue(':schedule', $_POST['schedule'], PDO::PARAM_STR);
     $stt->bindValue(':contents', $_POST['contents'], PDO::PARAM_STR);
     $stt->bindValue(':rule', $_POST['rule'], PDO::PARAM_STR);
