@@ -7,8 +7,43 @@ body {
 
 .container {
     margin: 0 auto;
-    padding: 0 200px;
+    padding: 0 180px;
 }
+
+@media(max-width: 1200px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .subtitle {
+        font-size: 24px !important;
+    }
+
+    main>.container>.post>.post-main {
+        padding-left: 50px !important;
+    }
+}
+
+@media(max-width: 670px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .subtitle {
+        font-size: 18px !important;
+    }
+
+    main>.container>.post>.post-main>.post-right>#edit {
+        font-size: 18px !important;
+    }
+
+
+    main>.container>.post>.post-main {
+        padding-left: 0px !important;
+    }
+}
+
+@media(max-width: 400px) {}
 
 main {
     height: 100%;
@@ -89,7 +124,59 @@ main>.container table ::placeholder {
 }
 
 .subtitle {
+    font-size: 37px;
+}
+
+main>.container>.post>.post-main {
+    height: 400px;
+    padding-left: 150px;
+}
+
+main>.container>.post>.storage {
+    height: 600px;
+}
+
+main>.container>.post>.post-main>.post-left {
+    float: left;
+}
+
+main>.container>.post>.post-main>.post-right {
+    float: right;
+}
+
+main>.container>.post>.post-main>.post-bottom {
+    padding-top: 300px;
+}
+
+main>.container>.post>.post-main>.post-left>.contents,
+main>.container>.post>.post-main>.post-left>.rule,
+main>.container>.post>.post-main>.post-left>.edit {
+    padding-top: 10px;
+    font-size: 20px;
+    color: #722F2F;
+}
+
+main>.container>.post>.post-main>.post-left>.contents>.description,
+main>.container>.post>.post-main>.post-left>.rule>.description {
+    padding-left: 40px;
+    font-size: 16px;
+    color: #545454;
+}
+
+#weight {
+    font-weight: bold;
+}
+
+main>.container>.post>.post-main>.post-left>.edit {
     font-size: 24px;
+}
+
+main>.container>.post>.post-main>.post-right>#wifi {
+    float: right;
+}
+
+main>.container>.post>.post-main>.post-right>#wifi>.ssid-pass {
+    font-size: 18px;
 }
 
 .slider {
