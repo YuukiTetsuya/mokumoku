@@ -10,6 +10,7 @@ class MySmarty extends Smarty
     public function __construct()
     {
         parent::__construct();
+	parent::$_CHARSET = 'UTF-8';
         $this->template_dir = $_SERVER['DOCUMENT_ROOT'].'/mokumoku/view/templates';
         $this->compile_dir = $_SERVER['DOCUMENT_ROOT'].'/mokumoku/view/templates_c';
  	$this->default_modifiers = [ 'escape:"htmlall"' ];
