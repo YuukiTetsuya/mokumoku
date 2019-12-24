@@ -1,21 +1,16 @@
 <?php
 require_once 'app/Controller/MySmarty.class.php';
+require_once 'app/utility/Agendas.php';
 
 use app\Controller\MySmarty;
 
 $s = new MySmarty();
+
+$post_id = uniqid(str_pad(mt_rand(), 10, "0", STR_PAD_LEFT), true);
+
 $s->assign(
     'agendas',
-    [
-        'title' => 'もくもく会概要',
-        'mokumokuname' => 'もくもく会名',
-        'schedule' => 'タイムスケジュール',
-        'contents' => 'コンテンツ',
-        'rule' => 'ルール',
-        'wifi' => 'WiFi情報',
-        'ssid' => 'SSID',
-        'pass' => 'PASS',
-    ]
+    $agendas
 );
 $s->assign(
     'frontValue',
@@ -26,7 +21,9 @@ $s->assign(
         'rule' => '迷惑行為禁止',
         'ssid' => 'mokumokuwifi',
         'pass' => 'moku-123',
+        'post_id' => $post_id,
 ]
 );
 $s->assign('wifimsg', '下記を入力してください（片方のみ可）');
+$s->assign('titleView', 'MokuMokuAppへようこそ');
 $s->d();
