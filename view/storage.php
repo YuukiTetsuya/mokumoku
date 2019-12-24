@@ -7,7 +7,7 @@ use app\Controller\AgendasBaseController;
 use app\Controller\MySmarty;
 
 $s = new MySmarty();
-$agendaBase = new AgendasBaseController(2);
+$agendaBase = new AgendasBaseController(1);
 
 $agendaBase->setAgendas(10);
 $agendaBase->setAgendas(1);
