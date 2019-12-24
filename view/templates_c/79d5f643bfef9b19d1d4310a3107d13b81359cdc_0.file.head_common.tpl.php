@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-23 09:15:45
+/* Smarty version 3.1.34-dev-7, created on 2019-12-24 12:10:15
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/head_common.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e000731a60cc1_63509713',
+  'unifunc' => 'content_5e018197ba5cd3_39135228',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '79d5f643bfef9b19d1d4310a3107d13b81359cdc' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/head_common.tpl',
-      1 => 1576984741,
+      1 => 1577157012,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header_common.tpl' => 1,
   ),
 ),false)) {
-function content_5e000731a60cc1_63509713 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e018197ba5cd3_39135228 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 
@@ -32,8 +32,13 @@ function content_5e000731a60cc1_63509713 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php $_smarty_tpl->_subTemplateRender('file:styles_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <title><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
-へようこそ</title>
+    <title><?php if ($_smarty_tpl->tpl_vars['post']->value['mokumokuname'] == NULL) {
+echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['titleView']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+ - <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');
+} else {
+echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['post']->value['mokumokuname'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+ - <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['title']->value, ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');
+}?></title>
 </head>
 
 <body>
