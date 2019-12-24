@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-23 14:42:42
+/* Smarty version 3.1.34-dev-7, created on 2019-12-24 10:51:25
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/post.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e0053d251bb44_45129457',
+  'unifunc' => 'content_5e016f1d32fe00_17215623',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b9c283d6e13f6976dc0342bf64bfed3a6d5d2d3' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/post.tpl',
-      1 => 1577079753,
+      1 => 1577152283,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:js_common.tpl' => 1,
   ),
 ),false)) {
-function content_5e0053d251bb44_45129457 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e016f1d32fe00_17215623 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender('file:head_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main>
@@ -34,21 +34,21 @@ function content_5e0053d251bb44_45129457 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="post-main">
                     <div class="post-left">
                         <div class="subtitle" id="weight">
-                            <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['oneAgendas']->value[1]['mokumokuname'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+                            <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['post']->value['mokumokuname'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 
                         </div>
                         <div class="schedule">
-                            開催時間：<?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['oneAgendas']->value[1]['schedule'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+                            開催時間：<?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['post']->value['schedule'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 
                         </div>
                         <div class="contents">
                             コンテンツ
-                            <div class="description"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['oneAgendas']->value[1]['contents'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+                            <div class="description"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['post']->value['contents'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 </div>
                         </div>
                         <div class="rule">
                             ルール
-                            <div class="description"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['oneAgendas']->value[1]['rule'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+                            <div class="description"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['post']->value['rule'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
 </div>
                         </div>
                         <div class="edit">編集</div>
@@ -67,6 +67,11 @@ function content_5e0053d251bb44_45129457 (Smarty_Internal_Template $_smarty_tpl)
                         </span>
                     </div>
                     <div class="post-bottom">
+                        <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['post']->value['mokumokuname'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+<br>
+                        $_GETで送ったuniqなid
+                        <?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['post']->value['post_id'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+<br>
                     </div>
                 </div>
             </div>

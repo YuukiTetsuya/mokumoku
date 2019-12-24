@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-23 09:18:20
+/* Smarty version 3.1.34-dev-7, created on 2019-12-24 09:23:16
   from '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e0007cceae381_55711830',
+  'unifunc' => 'content_5e015a74af9223_91840619',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dda0a2799a5dc823884b53546a9d1c8e6e7867c' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/mokumoku/view/templates/index.tpl',
-      1 => 1577060296,
+      1 => 1577146989,
       2 => 'file',
     ),
   ),
@@ -23,12 +23,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:js_common.tpl' => 1,
   ),
 ),false)) {
-function content_5e0007cceae381_55711830 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e015a74af9223_91840619 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender('file:head_common.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main>
         <div class="container">
-            <form action="app/model/insert_agendas.php" method="POST">
+            <form action="app/model/insert_agendas.php?post_id=<?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['frontValue']->value['post_id'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>
+" method="POST">
                 <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
                         <div class="subtitle agenda-title"><?php echo mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['agendas']->value['title'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8');?>

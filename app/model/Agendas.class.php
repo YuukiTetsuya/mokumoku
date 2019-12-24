@@ -9,8 +9,32 @@ use \PDOException;
 
 class Agendas
 {
+    // 投稿されたpost_idを引数で受け取り、該当するレコードを取得する
+    public function selectWhereAgendas(string $post_id)
+    {
+        try {
+            $db = getDb();
+            $stt = $db->prepare('SELECT * FROM agendas WHERE post_id = :post_id');
+            $stt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+            $stt->execute();
+            while ($data = $stt->fetch(PDO::FETCH_ASSOC)) {
+                $item['id'] = e($data['id']);
+                $item['mokumokuname'] = e($data['mokumokuname']);
+                $item['schedule'] = e($data['schedule']);
+                $item['contents'] = e($data['contents']);
+                $item['rule'] = e($data['rule']);
+                $item['ssid'] = e($data['ssid']);
+                $item['pass'] = e($data['pass']);
+                $item['post_id'] = e($data['post_id']);
+            };
+        } catch (PDOException $e) {
+            "エラーが発生しました:{$e->getMessage()}";
+        }
+        return $item;
+    }
+
     // agendasテーブルを降順ソートし、引数に指定した最新○件のレコードを取得する
-    public function selectAgendas(int $limit)
+    public function selectDescAgendas(int $limit)
     {
         try {
             $db = getDb();

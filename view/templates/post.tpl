@@ -6,18 +6,18 @@
                 <div class="post-main">
                     <div class="post-left">
                         <div class="subtitle" id="weight">
-                            {$oneAgendas.1.mokumokuname}
+                            {$post.mokumokuname}
                         </div>
                         <div class="schedule">
-                            開催時間：{$oneAgendas.1.schedule}
+                            開催時間：{$post.schedule}
                         </div>
                         <div class="contents">
                             コンテンツ
-                            <div class="description">{$oneAgendas.1.contents}</div>
+                            <div class="description">{$post.contents}</div>
                         </div>
                         <div class="rule">
                             ルール
-                            <div class="description">{$oneAgendas.1.rule}</div>
+                            <div class="description">{$post.rule}</div>
                         </div>
                         <div class="edit">編集</div>
                     </div>
@@ -31,6 +31,9 @@
                         </span>
                     </div>
                     <div class="post-bottom">
+                        {$post.mokumokuname}<br>
+                        $_GETで送ったuniqなid
+                        {$post.post_id}<br>
                     </div>
                 </div>
             </div>
