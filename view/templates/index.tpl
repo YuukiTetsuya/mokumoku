@@ -8,7 +8,7 @@
                     </caption>
                     {assign var="dot" value="."}
                     {foreach from=$agendas item=$agenda key=$agendakey}
-                    {if $agendakey eq 'title'}
+                    {if $agendakey eq 'title' or $agendakey eq 'post_id'}
                     {continue}
                     {/if}
                     <tr>
@@ -29,7 +29,7 @@
                     </tr>
                     {/foreach}
                 </table>
-                <input type="hidden" name="post_id" value="{$frontValue.post_id}">
+                <input type="hidden" name="post_id" value="{$agendas.post_id}">
                 <input type="submit" value="作成する" class="button">
             </form>
             <p><a href="view/post.php">post.php</a></p>
