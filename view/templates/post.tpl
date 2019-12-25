@@ -2,7 +2,8 @@
     <main>
         <div class="container">
             <div class="post">
-                <h1>{$create}</h1>
+                <h1>{if $create}{$create}
+                    {elseif $update}{$update}{/if}</h1>
                 <div class="post-main">
                     <div class="post-left">
                         <div class="subtitle" id="weight">
@@ -34,7 +35,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </main>
     {include file='footer_common.tpl'}

@@ -3,38 +3,43 @@
         <div class="container">
             <div class="post">
                 <h1>編集画面</h1>
-                <div class="post-main">
-                    <div class="post-left">
-                        <div class="subtitle" id="weight">
-                            {$post.mokumokuname}
+                <div class="post-main edit">
+                    <form action="../app/Model/updateAgendas.php" method="POST">
+                        <div class="post-left">
+
+                            <table border="2" cellpadding="5" cellspacing="5">
+                                {foreach from=$agendas item=$agenda key=$agendakey}
+                                {if $agendakey eq 'title'}
+                                {continue}
+                                {/if}
+                                <tr>
+                                    {if $agendakey eq 'wifi'}
+                                    <td>{$agendas.wifi}</td>
+                                    <td colspan="2" id="wifimsg">{$wifimsg}</td>
+                                    {continue}
+                                    {/if}
+                                    <td {if $agendakey eq 'contents' } valign="top" {elseif $agendakey eq 'pass' }
+                                        class="pass" {/if}>{$agenda} </td> <td>
+                                        {if $agendakey eq 'contents'}
+                                        <textarea name="{$agendakey}" id="contents" cols="60"
+                                            rows="10">{$post.$agendakey}</textarea>
+                                        {else}
+                                        <input type="text" name="{$agendakey}" value="{$post.$agendakey}">
+                                        {/if}
+                                    </td>
+                                </tr>
+                                {/foreach}
+                            </table>
                         </div>
-                        <div class="schedule">
-                            開催時間：{$post.schedule}
-                        </div>
-                        <div class="contents">
-                            {$agendas.contents}
-                            <div class="description">{$post.contents}</div>
-                        </div>
-                        <div class="rule">
-                            {$agendas.rule}
-                            <div class="description">{$post.rule}</div>
-                        </div>
-                        <div class="edit"><a href="update.php">編集</a></div>
-                    </div>
-                    <div class="post-right">
-                        <span id="wifi">
-                            <span class="subtitle" id="weight">Wifi</span><br>
-                            <span class="ssid-pass">
-                                {$agendas.ssid} {$post.ssid}<br>
-                                {$agendas.pass} {$post.pass}
-                            </span>
-                        </span>
-                    </div>
+                        <div class="post-right"></div>
+                        <input type="hidden" name="token" value="{$token}">
+                        <input type="hidden" name="post_id" value="{$post.post_id}">
+                        <input type="submit" value="編集する" class="button">
+                    </form>
                     <div class="post-bottom">
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </main>
     {include file='footer_common.tpl'}

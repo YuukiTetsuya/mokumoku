@@ -3,7 +3,7 @@ namespace app\Controller;
 
 require_once 'app/Model/Agendas.class.php';
 require_once 'app/utility/Encode.php';
-
+require_once 'app/utility/sessionDestroy.php';
 
 use app\Model\Agendas;
 
@@ -15,7 +15,7 @@ class AgendasPostController extends Agendas
 
     public function __construct()
     {
-        // insert_agendasからユニークなpost_idが正しくidキーで送られていれば、その値を渡す
+        // insertAgendasからユニークなpost_idが正しくidキーで送られていれば、その値を渡す
         if (isset(($_GET['id']))) {
             $this->post_id = e($_GET['id']);
         } else {
@@ -30,27 +30,20 @@ class AgendasPostController extends Agendas
 
     public function getPostAgendas()
     {
-        // 作成時のみ、作成をお知らせするメッセージを追加
         session_start();
-        if ($_SESSION['created']) {
+        // 作成時のみ、作成をお知らせするメッセージを追加
+        if ($_SESSION['created'] == 'true') {
             global $created;
             $created = 'もくもく会が作成されました';
         };
-        // セッション変数とセッションクッキー（ID受け渡しのためのクッキー）とセッション自体を破棄する
-        $_SESSION = [];
-        if (isset($_COOKIE[session_name()])) {
-            $cparam = session_get_cookie_params();
-            setcookie(
-                session_name(),
-                '',
-                time() - 3600,
-                $cparam['path'],
-                $cparam['domain'],
-                $cparam['secure'],
-                $cparam['httponly']
-            );
+        // 更新時のみ、更新をお知らせするメッセージを追加
+        if ($_SESSION['updated'] == 'true') {
+            global $updated;
+            $updated = 'もくもく会が更新されました';
         };
-        session_destroy();
+        // セッションを破棄する
+        sessionDestroy();
+
         // GETしたidと同じpost_idのレコードを返す
         return $this->post;
     }

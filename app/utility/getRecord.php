@@ -4,8 +4,9 @@ require_once 'app/Controller/AgendasPostController.class.php';
 
 use app\Controller\AgendasPostController;
 
-// 作成時のみ生成されるメッセージの変数を宣言
+// 作成時、更新時のみ生成されるメッセージの変数を宣言
 $created = null;
+$updated = null;
 
 $agendaPost = new AgendasPostController();
 // GETしたidの値をセットする

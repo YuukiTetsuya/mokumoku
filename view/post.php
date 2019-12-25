@@ -10,6 +10,7 @@ $s = new MySmarty();
 $s->assign('agendas', $agendas);
 $s->assign('post', $getRecord);
 $s->assign('create', $created);
+$s->assign('update', $updated);
 
 
 $s->d();

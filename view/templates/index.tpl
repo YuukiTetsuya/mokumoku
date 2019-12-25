@@ -1,12 +1,11 @@
     {include file='head_common.tpl'}
     <main>
         <div class="container">
-            <form action="app/Model/insert_agendas.php" method="POST">
+            <form action="app/Model/insertAgendas.php" method="POST">
                 <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
                         <div class="subtitle agenda-title">{$agendas.title}</div>
                     </caption>
-                    {assign var="dot" value="."}
                     {foreach from=$agendas item=$agenda key=$agendakey}
                     {if $agendakey eq 'title'}
                     {continue}
@@ -29,6 +28,7 @@
                     </tr>
                     {/foreach}
                 </table>
+                <input type="hidden" name="token" value="{$token}">
                 <input type="hidden" name="post_id" value="{$post_id}">
                 <input type="submit" value="作成する" class="button">
             </form>
