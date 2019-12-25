@@ -6,8 +6,6 @@ use app\Controller\MySmarty;
 
 $s = new MySmarty();
 
-$post_id = uniqid(str_pad(mt_rand(), 10, "0", STR_PAD_LEFT), true);
-
 $s->assign(
     'agendas',
     $agendas
@@ -21,8 +19,7 @@ $s->assign(
         'rule' => '迷惑行為禁止',
         'ssid' => 'mokumokuwifi',
         'pass' => 'moku-123',
-        'post_id' => $post_id,
-]
+    ]
 );
 $s->assign('wifimsg', '下記を入力してください（片方のみ可）');
 $s->assign('titleView', 'MokuMokuAppへようこそ');

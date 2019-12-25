@@ -15,7 +15,7 @@ class Agendas
         try {
             $db = getDb();
             $stt = $db->prepare('SELECT * FROM agendas WHERE post_id = :post_id');
-            $stt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+            $stt->bindParam(':post_id', $post_id, PDO::PARAM_STR);
             $stt->execute();
             while ($data = $stt->fetch(PDO::FETCH_ASSOC)) {
                 $item['id'] = e($data['id']);
@@ -58,5 +58,19 @@ class Agendas
             "エラーが発生しました:{$e->getMessage()}";
         }
         return $item;
+    }
+
+    public function updateWhereAgendas(string $post_id)
+    {
+        $db = getDb();
+        $stt = $db->prepare('UPDATE agendas SET mokumokuname=:mokumokuname, title=:title, contents=:contents, rule=:rule, ssid=:ssid, pass=:pass WHERE post_id = :post_id');
+        $stt->bindParam(':mokumokuname', $mokumokuname, PDO::PARAM_STR);
+        $stt->bindParam(':title', $title, PDO::PARAM_STR);
+        $stt->bindParam(':contents', $contents, PDO::PARAM_STR);
+        $stt->bindParam(':rule', $rule, PDO::PARAM_STR);
+        $stt->bindParam(':ssid', $ssid, PDO::PARAM_STR);
+        $stt->bindParam(':pass', $pass, PDO::PARAM_STR);
+        $stt->bindParam(':post_id', $post_id, PDO::PARAM_STR);
+        $stt->execute();
     }
 }
