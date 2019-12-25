@@ -1,5 +1,5 @@
 <?php
-namespace app\model;
+namespace app\Model;
 
 require_once 'config.php';
 require_once 'app/utility/Encode.php';

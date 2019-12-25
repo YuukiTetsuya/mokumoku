@@ -1,9 +1,9 @@
 <?php
 namespace app\Controller;
 
-require_once 'app/model/Agendas.class.php';
+require_once 'app/Model/Agendas.class.php';
 
-use app\model\Agendas;
+use app\Model\Agendas;
 
 // 引数の値に応じて、降順ソートしたレコードを任意の数取得できるコントローラ
 class AgendasBaseController extends Agendas
