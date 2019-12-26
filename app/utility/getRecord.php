@@ -4,7 +4,7 @@ require_once 'app/Controller/AgendasPostController.class.php';
 
 use app\Controller\AgendasPostController;
 
-// 作成時、更新時のみ生成されるメッセージの変数を宣言
+// 作成時/更新時のみ生成されるメッセージの変数を宣言（セッションがなければnullのまま）
 $created = null;
 $updated = null;
 

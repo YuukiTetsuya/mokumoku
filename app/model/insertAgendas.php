@@ -1,14 +1,11 @@
 <?php
 require_once 'config.php';
-require_once 'app/utility/sessionDestroy.php';
 
 // CSRF保護対策
 session_start();
 if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
     die('不正なアクセスが行われました');
 }
-// セッションを削除
-sessionDestroy();
 
 // post_idが送信されているかどうか確認。なければ空を代入(nullはpost_idには入らないので、例外処理される)
 if (isset($_POST['post_id'])) {
@@ -43,8 +40,7 @@ try {
     print "エラーが発生しました:{$e->getMessage()}";
 }
 
-session_start();
-// 作成時のみcreatedをtrueにする
+// 作成時のみ作成フラグを立てる（createdをtrueにする）
 $_SESSION['created'] = true;
 
 header("location: ../../view/post.php?id=$post_id");
