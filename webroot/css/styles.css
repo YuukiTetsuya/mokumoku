@@ -128,6 +128,10 @@ main>.container table ::placeholder {
     color: red;
 }
 
+.mokudb {
+    font-size: 24px;
+}
+
 main>.container>.post>.post-main {
     height: 400px;
     padding-left: 150px;
