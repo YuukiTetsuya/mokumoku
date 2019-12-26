@@ -5,5 +5,15 @@ RewriteEngine on
 RewriteBase /
 RewriteCond %{REQUEST_URI} index(.*)\.html
 RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
-RewriteCond %{REQUEST_URI} index(.*)\.php
-RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
+#RewriteCond %{REQUEST_URI} index(.*)\.php
+#RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
+
+#AuthUserfile /.htpasswd
+#AuthGroupfile /dev/null
+#AuthName "Please enter your ID and password"
+#AuthType Basic
+#require valid-user
+
+#ファイル一覧機能を無効にする命令
+Options -Indexes
+
