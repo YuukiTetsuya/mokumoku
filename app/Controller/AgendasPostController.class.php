@@ -41,6 +41,10 @@ class AgendasPostController extends Agendas
             global $updated;
             $updated = 'もくもく会が更新されました';
         }
+        if (isset($_SESSION['deleted'])) {
+            global $deleted;
+            $deleted = 'もくもく会が削除されました';
+        }
         // GETしたidと同じpost_idのレコードを返す
         return $this->post;
     }

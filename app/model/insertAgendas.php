@@ -17,6 +17,9 @@ if (isset($_POST['post_id'])) {
 try {
     // db(PDOオブジェクト)に対し、各カラムにユーザー入力値を挿入する
     $db = getDb();
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // トランザクション開始
+    $db->beginTransaction();
     $id = null;
     if ($_POST['mokumokuname'] == '') {
         $mokumokuname = null;
@@ -26,17 +29,20 @@ try {
         $mokumokuname = $_POST['mokumokuname'];
     }
     $stt = $db->prepare('INSERT INTO agendas(id, mokumokuname, schedule, contents, rule, ssid, pass, post_id) VALUES(:id, :mokumokuname, :schedule, :contents, :rule, :ssid, :pass, :post_id)');
-    $stt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stt->bindValue(':mokumokuname', $mokumokuname, PDO::PARAM_STR);
-    $stt->bindValue(':schedule', $_POST['schedule'], PDO::PARAM_STR);
-    $stt->bindValue(':contents', $_POST['contents'], PDO::PARAM_STR);
-    $stt->bindValue(':rule', $_POST['rule'], PDO::PARAM_STR);
-    $stt->bindValue(':ssid', $_POST['ssid'], PDO::PARAM_STR);
-    $stt->bindValue(':pass', $_POST['pass'], PDO::PARAM_STR);
-    $stt->bindValue(':post_id', $post_id, PDO::PARAM_STR);
+    $stt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stt->bindParam(':mokumokuname', $mokumokuname, PDO::PARAM_STR);
+    $stt->bindParam(':schedule', $_POST['schedule'], PDO::PARAM_STR);
+    $stt->bindParam(':contents', $_POST['contents'], PDO::PARAM_STR);
+    $stt->bindParam(':rule', $_POST['rule'], PDO::PARAM_STR);
+    $stt->bindParam(':ssid', $_POST['ssid'], PDO::PARAM_STR);
+    $stt->bindParam(':pass', $_POST['pass'], PDO::PARAM_STR);
+    $stt->bindParam(':post_id', $post_id, PDO::PARAM_STR);
     $stt->execute();
+    // トランザクション終了
+    $db->commit();
 } catch (PDOException $e) {
     // エラー時;
+    $db->rollBack();
     print "エラーが発生しました:{$e->getMessage()}";
 }
 

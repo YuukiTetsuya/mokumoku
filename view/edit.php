@@ -1,6 +1,5 @@
 <?php
 
-// require_once 'app/Controller/AgendasEditController.class.php';
 require_once 'app/Controller/MySmarty.class.php';
 require_once 'app/utility/getTitle.php';
 require_once 'app/utility/getRecord.php';

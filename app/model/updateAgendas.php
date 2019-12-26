@@ -17,7 +17,9 @@ if (isset($_POST['post_id'])) {
 try {
     // db(PDOオブジェクト)に対し、各カラムにユーザー入力値を挿入する
     $db = getDb();
-    $id = null;
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // トランザクション開始
+    $db->beginTransaction();
     if ($_POST['mokumokuname'] == '') {
         $mokumokuname = null;
         header("location: ../../view/edit.php?id=$post_id");
@@ -34,12 +36,14 @@ try {
     $stt->bindParam(':pass', $_POST['pass'], PDO::PARAM_STR);
     $stt->bindParam(':post_id', $post_id, PDO::PARAM_STR);
     $stt->execute();
+    // トランザクションをコミット
+    $db->commit();
 } catch (PDOException $e) {
     // エラー時;
+    $db->rollBack();
     print "エラーが発生しました:{$e->getMessage()}";
 }
-
-// 更新された場合に、更新フラグを立てる（updatedをtrueにする）
-$_SESSION['updated'] = true;
+    // 更新された場合に、更新フラグを立てる（updatedをtrueにする）
+    $_SESSION['updated'] = true;
 
 header("location: ../../view/show.php?id=$post_id");

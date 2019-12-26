@@ -4,7 +4,10 @@
             <form action="app/Model/insertAgendas.php" method="POST">
                 <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
-                        <div class="subtitle agenda-title">{$agendas.title}</div>
+                        <div class="subtitle agenda-title">{$agendas.title}{if $deletemsg neq
+                            ''} <span class="delete-msg">{$deletemsg}</span>
+                            {/if}
+                        </div>
                     </caption>
                     {foreach from=$agendas item=$agenda key=$agendakey}
                     {if $agendakey eq 'title'}
