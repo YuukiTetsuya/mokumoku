@@ -35,7 +35,7 @@
                 <input type="hidden" name="post_id" value="{$post_id}">
                 <input type="submit" value="作成する" class="button">
             </form>
-            <p><a href="view/storage.php">もくもくデータベース</a></p>
+            <p class="mokudb"><a href="view/storage.php">もくもくデータベース</a></p>
             <ul class="slider">
                 <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
                 <li><a href="#"><img src="webroot/image/php.jpg" alt="image02"></a></li>
