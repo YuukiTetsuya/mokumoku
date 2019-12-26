@@ -8,7 +8,7 @@
                         <ol>
                             {foreach $tenAgendas as $all}
                             <li>
-                                <a href="post.php?id={$all.post_id}">{$all.mokumokuname}</a>
+                                <a href="show.php?id={$all.post_id}">{$all.mokumokuname}</a>
                                 <ul>
                                     <li>
                                         {$all.schedule}

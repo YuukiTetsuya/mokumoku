@@ -2,7 +2,7 @@
     <main>
         <div class="container">
             <div class="post">
-                <h1>{$create}</h1>
+                <h1>{$create}{$update}{$delete}</h1>
                 <div class="post-main">
                     <div class="post-left">
                         <div class="subtitle" id="weight">
@@ -12,14 +12,15 @@
                             開催時間：{$post.schedule}
                         </div>
                         <div class="contents">
-                            コンテンツ
+                            {$agendas.contents}
                             <div class="description">{$post.contents}</div>
                         </div>
                         <div class="rule">
-                            ルール
+                            {$agendas.rule}
                             <div class="description">{$post.rule}</div>
                         </div>
-                        <div class="edit">編集</div>
+                        <div class="edit"><a href="edit.php?id={$post.post_id}">編集</a></div>
+                        <div class="delete"><a href="../app/Model/destroyAgendas.php?id={$post.post_id}">削除</a></div>
                     </div>
                     <div class="post-right">
                         <span id="wifi">
@@ -34,7 +35,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </main>
     {include file='footer_common.tpl'}

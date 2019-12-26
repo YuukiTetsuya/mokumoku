@@ -1,7 +1,7 @@
 <?php
 require_once 'app/Controller/MySmarty.class.php';
 require_once 'app/Controller/AgendasBaseController.class.php';
-require_once 'app/utility/Agendas.php';
+require_once 'app/utility/getTitle.php';
 
 use app\Controller\AgendasBaseController;
 use app\Controller\MySmarty;
