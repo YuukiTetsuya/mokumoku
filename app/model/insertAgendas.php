@@ -1,8 +1,8 @@
 <?php
 require_once 'config.php';
 
-// CSRF保護対策
 session_start();
+// CSRF保護対策
 if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
     die('不正なアクセスが行われました');
 }
@@ -43,4 +43,4 @@ try {
 // 作成時のみ作成フラグを立てる（createdをtrueにする）
 $_SESSION['created'] = true;
 
-header("location: ../../view/post.php?id=$post_id");
+header("location: ../../view/show.php?id=$post_id");

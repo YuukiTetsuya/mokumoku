@@ -15,6 +15,4 @@ $s->assign('token', $_SESSION['token']);
 $s->assign('agendas', $agendas);
 $s->assign('post', $getRecord);
 $s->assign('wifimsg', '下記を入力してください（片方のみ可）');
-
-
 $s->d();
