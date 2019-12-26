@@ -33,10 +33,6 @@ body {
         font-size: 18px !important;
     }
 
-    main>.container>.post>.post-main>.post-right>#edit {
-        font-size: 18px !important;
-    }
-
 
     main>.container>.post>.post-main {
         padding-left: 0px !important;
@@ -127,6 +123,11 @@ main>.container table ::placeholder {
     font-size: 37px;
 }
 
+.delete-msg {
+    font-size: 24px;
+    color: red;
+}
+
 main>.container>.post>.post-main {
     height: 400px;
     padding-left: 150px;
@@ -140,6 +141,14 @@ main>.container>.post>.post-main>.post-left {
     float: left;
 }
 
+main>.container>.post>.edit {
+    height: 500px;
+}
+
+main>.container>.post>.post-main>form>.post-left {
+    float: left;
+}
+
 main>.container>.post>.post-main>.post-right {
     float: right;
 }
@@ -150,7 +159,17 @@ main>.container>.post>.post-main>.post-bottom {
 
 main>.container>.post>.post-main>.post-left>.contents,
 main>.container>.post>.post-main>.post-left>.rule,
-main>.container>.post>.post-main>.post-left>.edit {
+main>.container>.post>.post-main>.post-left>.edit,
+main>.container>.post>.post-main>.post-left>.delete {
+    padding-top: 10px;
+    font-size: 20px;
+    color: #722F2F;
+}
+
+main>.container>.post>.post-main>form>.post-left>.contents,
+main>.container>.post>.post-main>form>.post-left>.rule,
+main>.container>.post>.post-main>form>.post-left>.edit,
+main>.container>.post>.post-main>form>.post-left>.delete {
     padding-top: 10px;
     font-size: 20px;
     color: #722F2F;
@@ -158,6 +177,13 @@ main>.container>.post>.post-main>.post-left>.edit {
 
 main>.container>.post>.post-main>.post-left>.contents>.description,
 main>.container>.post>.post-main>.post-left>.rule>.description {
+    padding-left: 40px;
+    font-size: 16px;
+    color: #545454;
+}
+
+main>.container>.post>.post-main>form>.post-left>.contents>.description,
+main>.container>.post>.post-main>form>.post-left>.rule>.description {
     padding-left: 40px;
     font-size: 16px;
     color: #545454;
@@ -171,11 +197,31 @@ main>.container>.post>.post-main>.post-left>.edit {
     font-size: 24px;
 }
 
+main>.container>.post>.post-main>form>.post-left>.edit {
+    font-size: 24px;
+}
+
+main>.container>.post>.post-main>.post-left>.delete {
+    font-size: 24px;
+}
+
+main>.container>.post>.post-main>form>.post-left>.delete {
+    font-size: 24px;
+}
+
 main>.container>.post>.post-main>.post-right>#wifi {
     float: right;
 }
 
+main>.container>.post>.post-main>form>.post-right>#wifi {
+    float: right;
+}
+
 main>.container>.post>.post-main>.post-right>#wifi>.ssid-pass {
+    font-size: 18px;
+}
+
+main>.container>.post>.post-main>form>.post-right>#wifi>.ssid-pass {
     font-size: 18px;
 }
 

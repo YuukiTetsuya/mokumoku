@@ -1,14 +1,16 @@
     {include file='head_common.tpl'}
     <main>
         <div class="container">
-            <form action="app/model/insert_agendas.php" method="POST">
+            <form action="app/Model/insertAgendas.php" method="POST">
                 <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
-                        <div class="subtitle agenda-title">{$agendas.title}</div>
+                        <div class="subtitle agenda-title">{$agendas.title}{if $deletemsg neq
+                            ''} <span class="delete-msg">{$deletemsg}</span>
+                            {/if}
+                        </div>
                     </caption>
-                    {assign var="dot" value="."}
                     {foreach from=$agendas item=$agenda key=$agendakey}
-                    {if $agendakey eq 'title' or $agendakey eq 'post_id'}
+                    {if $agendakey eq 'title'}
                     {continue}
                     {/if}
                     <tr>
@@ -29,10 +31,10 @@
                     </tr>
                     {/foreach}
                 </table>
-                <input type="hidden" name="post_id" value="{$agendas.post_id}">
+                <input type="hidden" name="token" value="{$token}">
+                <input type="hidden" name="post_id" value="{$post_id}">
                 <input type="submit" value="作成する" class="button">
             </form>
-            <p><a href="view/post.php">post.php</a></p>
             <p><a href="view/storage.php">もくもくデータベース</a></p>
             <ul class="slider">
                 <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>

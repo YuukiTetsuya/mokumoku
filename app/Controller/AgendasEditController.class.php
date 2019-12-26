@@ -1,9 +1,9 @@
 <?php
 namespace app\Controller;
 
-require_once 'app\model\Agendas.class.php';
+require_once 'app/Model/Agendas.class.php';
 
-use app\model\Agendas;
+use app\Model\Agendas;
 
 class AgendasEditController extends Agendas
 {

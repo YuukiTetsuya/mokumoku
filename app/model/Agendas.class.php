@@ -1,5 +1,5 @@
 <?php
-namespace app\model;
+namespace app\Model;
 
 require_once 'config.php';
 require_once 'app/utility/Encode.php';
@@ -58,19 +58,5 @@ class Agendas
             "エラーが発生しました:{$e->getMessage()}";
         }
         return $item;
-    }
-
-    public function updateWhereAgendas(string $post_id)
-    {
-        $db = getDb();
-        $stt = $db->prepare('UPDATE agendas SET mokumokuname=:mokumokuname, title=:title, contents=:contents, rule=:rule, ssid=:ssid, pass=:pass WHERE post_id = :post_id');
-        $stt->bindParam(':mokumokuname', $mokumokuname, PDO::PARAM_STR);
-        $stt->bindParam(':title', $title, PDO::PARAM_STR);
-        $stt->bindParam(':contents', $contents, PDO::PARAM_STR);
-        $stt->bindParam(':rule', $rule, PDO::PARAM_STR);
-        $stt->bindParam(':ssid', $ssid, PDO::PARAM_STR);
-        $stt->bindParam(':pass', $pass, PDO::PARAM_STR);
-        $stt->bindParam(':post_id', $post_id, PDO::PARAM_STR);
-        $stt->execute();
     }
 }
