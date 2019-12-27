@@ -6,6 +6,7 @@
 <script type="text/javascript" src="webroot/js/slick.js"></script>
 {else}
 <script type=" text/javascript" src="../webroot/js/index.js"></script>
+<script type=" text/javascript" src="../webroot/js/checkFunction.js"></script>
 {/if}
 </body>
 

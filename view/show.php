@@ -8,7 +8,7 @@ use app\Controller\MySmarty;
 
 $s = new MySmarty();
 
-// セッションを完全に破棄（作成フラグとtokenをにする）
+// セッションを完全に破棄（作成フラグとtokenを空にする）
 sessionDestroy();
 
 $s->assign('agendas', $agendas);

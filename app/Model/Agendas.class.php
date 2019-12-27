@@ -59,4 +59,29 @@ class Agendas
         }
         return $item;
     }
+
+    //agendasテーブルからもくもく会名が検索掛けた文字を含む場合、降順ソートして引数に指定した最新○件のレコードを取得する
+    public function selectLimitAgendas(string $search, int $limit)
+    {
+        try {
+            $db = getDb();
+            $stt = $db->prepare('SELECT * FROM agendas WHERE mokumokuname LIKE :search ORDER BY id DESC LIMIT :limit');
+            $stt->bindParam(':search', $search, PDO::PARAM_STR);
+            $stt->bindParam(':limit', $limit, PDO::PARAM_INT);
+            $stt->execute();
+            $i = 1;
+            // agendsテーブルからfetchし、二次元配列[id番号][カラム名]に代入 降順ソート済の為、最新データほど$iの番号が若い
+            while ($data = $stt->fetch(PDO::FETCH_ASSOC)) {
+                $item[$i]['id'] = e($data['id']);
+                $item[$i]['mokumokuname'] = e($data['mokumokuname']);
+                $item[$i]['schedule'] = e($data['schedule']);
+                $item[$i]['post_id'] = e($data['post_id']);
+                $i++;
+            };
+        } catch (PDOException $e) {
+            //throw $th;
+            "エラーが発生しました:{$e->getMessage()}";
+        }
+        return $item;
+    }
 }
