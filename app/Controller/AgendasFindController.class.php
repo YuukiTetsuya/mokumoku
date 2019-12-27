@@ -29,12 +29,6 @@ class AgendasFindController extends Agendas
 
     public function getFindAgendas()
     {
-        session_start();
-        // 検索時のみ検索件数をお知らせするメッセージを追加
-        if (isset($_SESSION['token'])) {
-            $_SESSION['finded'] = 'true';
-        };
-
         // 検索キーワードと同じ名前を持つもくもく名のレコードを返す
         return $this->find;
     }

@@ -24,7 +24,8 @@
                     </div>
                     <div class="post-right">
                         <h2>データベース内検索</h2>
-                        <form id="search_form" name="search_form" action="find.php" method="POST" onsubmit="">
+                        <form id="search_form" name="search_form" action="find.php" method="POST"
+                            onsubmit="return check()">
                             <input type="text" id="search_form" name="search" placeholder="{$findmokumoku}">
                             <input type="hidden" name="token" value="{$token}">
                             <input type="submit" value="検索する">
