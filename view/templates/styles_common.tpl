@@ -8,4 +8,5 @@
 <link rel="stylesheet" href="../webroot/css/styles.css">
 <link rel="stylesheet" href="../webroot/css/header.css">
 <link rel="stylesheet" href="../webroot/css/footer.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 {/if}
