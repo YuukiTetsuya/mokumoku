@@ -14,8 +14,8 @@ $paging = 0;
 
 $s = new MySmarty();
 $agendaBase = new AgendasBaseController(1);
-$agendaBase->setAgendas(10);
 $agendaBase->setAgendas(1);
+$agendaBase->setAgendas(10);
 
 $s->assign('agendas', $agendas);
 $s->assign('token', $_SESSION['token']);

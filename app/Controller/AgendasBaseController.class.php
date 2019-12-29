@@ -74,7 +74,6 @@ class AgendasBaseController extends Agendas
             $current = e($_GET['page']);
             $prev = e($_GET['page']) - 1;
         } elseif (!isset(($_GET['page']))) {
-            $next = 1;
             $next = 2;
             $current = 1;
             $prev = 0;
