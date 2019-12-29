@@ -2,6 +2,7 @@
 namespace app\Controller;
 
 require_once 'app/Model/Agendas.class.php';
+require_once 'app/utility/Encode.php';
 
 use app\Model\Agendas;
 
@@ -61,5 +62,27 @@ class AgendasBaseController extends Agendas
         }
         // セット値が無効である場合、初期値（コンストラクタ値）でresultを返す
         return $this->result;
+    }
+
+    // ページネーションの値を返す関数
+    public function getPagePrevNext()
+    {
+        global $current;
+        global $getPaging;
+        if (isset(($_GET['page']))) {
+            $next = e($_GET['page']) + 1;
+            $current = e($_GET['page']);
+            $prev = e($_GET['page']) - 1;
+        } elseif (!isset(($_GET['page']))) {
+            $next = 2;
+            $current = 1;
+            $prev = 0;
+        }
+        $getPaging = [
+            'current' => $current,
+            'prev' => $prev,
+            'next' => $next,
+        ];
+        return $getPaging;
     }
 }

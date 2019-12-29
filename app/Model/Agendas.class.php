@@ -33,12 +33,28 @@ class Agendas
         return $item;
     }
 
-    // agendasテーブルを降順ソートし、引数に指定した最新○件のレコードを取得する
+    // agendasテーブルを降順ソートし、引数に指定した最新○件のレコードを取得する。○件を超える件数であればページネイトする。
     public function selectDescAgendas(int $limit)
     {
         try {
             $db = getDb();
-            $stt = $db->prepare('SELECT * FROM agendas ORDER BY id DESC LIMIT :limit');
+            $stt = $db->prepare('SELECT * FROM agendas ORDER BY id DESC LIMIT :start, :limit');
+            // ページネーション用のカウントを作成
+            $stc = $db->query('SELECT count(*) FROM agendas');
+            $count = $stc->fetchColumn();
+            $count = $count / 10;
+            // ページングを生成する
+            if (isset($_GET['page'])) {
+                $page = (int)e($_GET['page']);
+            } else {
+                $page = 1;
+            }
+            if ($page > 1) {
+                $start = ($page * 10) - 10;
+            } else {
+                $start = 0;
+            }
+            $stt->bindParam(':start', $start, PDO::PARAM_INT);
             $stt->bindParam(':limit', $limit, PDO::PARAM_INT);
             $stt->execute();
             $i = 1;
@@ -54,21 +70,41 @@ class Agendas
                 $item[$i]['post_id'] = e($data['post_id']);
                 $i++;
             };
+            global $paging;
+            $paging = $count;
         } catch (PDOException $e) {
             "エラーが発生しました:{$e->getMessage()}";
         }
         return $item;
     }
 
-    //agendasテーブルからもくもく会名が検索掛けた文字を含む場合、降順ソートして引数に指定した最新○件のレコードを取得する
+    // agendasテーブルからもくもく会名が検索掛けた文字を含む場合、降順ソートして引数に指定した最新○件のレコードを取得する。ページネイトも兼用
     public function selectLimitAgendas(string $search, int $limit)
     {
         try {
             $db = getDb();
-            $stt = $db->prepare('SELECT * FROM agendas WHERE mokumokuname LIKE :search ORDER BY id DESC LIMIT :limit');
+            $stt = $db->prepare('SELECT * FROM agendas WHERE mokumokuname LIKE :search ORDER BY id DESC LIMIT :start, :limit');
+            // ページネーション用のカウントを作成
+            $stc = $db->prepare('SELECT count(*) FROM agendas WHERE mokumokuname LIKE :search');
+            // ページングを生成する
+            if (isset($_GET['page'])) {
+                $page = (int)e($_GET['page']);
+            } else {
+                $page = 1;
+            }
+            if ($page > 1) {
+                $start = ($page * 10) - 10;
+            } else {
+                $start = 0;
+            }
             $stt->bindParam(':search', $search, PDO::PARAM_STR);
+            $stc->bindParam(':search', $search, PDO::PARAM_STR);
             $stt->bindParam(':limit', $limit, PDO::PARAM_INT);
+            $stt->bindParam(':start', $start, PDO::PARAM_INT);
             $stt->execute();
+            $stc->execute();
+            $count = $stc->fetchColumn();
+            $countKey = $count / 10;
             $i = 1;
             // agendsテーブルからfetchし、二次元配列[id番号][カラム名]に代入 降順ソート済の為、最新データほど$iの番号が若い
             while ($data = $stt->fetch(PDO::FETCH_ASSOC)) {
@@ -78,6 +114,10 @@ class Agendas
                 $item[$i]['post_id'] = e($data['post_id']);
                 $i++;
             };
+            global $paging;
+            global $findAllCnt;
+            $paging = $countKey;
+            $findAllCnt = $count;
         } catch (PDOException $e) {
             //throw $th;
             "エラーが発生しました:{$e->getMessage()}";
