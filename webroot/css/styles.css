@@ -132,6 +132,32 @@ main>.container table ::placeholder {
     font-size: 24px;
 }
 
+.paging {
+    text-align: center;
+}
+
+#paging-textnext,
+#paging-textprev,
+#paging-prev,
+#paging-next,
+#paging-number {
+    border-radius: 20px;
+    margin: 8px;
+    padding: 4px 16px;
+    background-color: #722F2F;
+    color: white !important;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+#paging-textnext:hover,
+#paging-textprev:hover,
+#paging-prev:hover,
+#paging-next:hover,
+#paging-number:hover {
+    opacity: 0.8;
+}
+
 .tooltip:hover {
     color: #722F2F;
 }

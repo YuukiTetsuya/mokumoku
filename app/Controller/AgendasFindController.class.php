@@ -9,7 +9,7 @@ use app\Model\Agendas;
 // ユーザが投稿したidに対応するレコードを返すコントローラ
 class AgendasFindController extends Agendas
 {
-    public $find = 0;
+    private $find = 0;
     public $search = 0;
 
     public function __construct()

@@ -33,12 +33,28 @@ class Agendas
         return $item;
     }
 
-    // agendasテーブルを降順ソートし、引数に指定した最新○件のレコードを取得する
+    // agendasテーブルを降順ソートし、引数に指定した最新○件のレコードを取得する。○件を超える件数であればページネイトする。
     public function selectDescAgendas(int $limit)
     {
         try {
             $db = getDb();
-            $stt = $db->prepare('SELECT * FROM agendas ORDER BY id DESC LIMIT :limit');
+            $stt = $db->prepare('SELECT * FROM agendas ORDER BY id DESC LIMIT :start, :limit');
+            // ページネーション用のカウントを作成
+            $stc = $db->query('SELECT count(*) FROM agendas');
+            $count = $stc->fetchColumn();
+            $count = $count / 10;
+            // ページングを生成する
+            if (isset($_GET['page'])) {
+                $page = (int)e($_GET['page']);
+            } else {
+                $page = 1;
+            }
+            if ($page > 1) {
+                $start = ($page * 10) - 10;
+            } else {
+                $start = 0;
+            }
+            $stt->bindParam(':start', $start, PDO::PARAM_INT);
             $stt->bindParam(':limit', $limit, PDO::PARAM_INT);
             $stt->execute();
             $i = 1;
@@ -54,13 +70,15 @@ class Agendas
                 $item[$i]['post_id'] = e($data['post_id']);
                 $i++;
             };
+            global $paging;
+            $paging = $count;
         } catch (PDOException $e) {
             "エラーが発生しました:{$e->getMessage()}";
         }
         return $item;
     }
 
-    //agendasテーブルからもくもく会名が検索掛けた文字を含む場合、降順ソートして引数に指定した最新○件のレコードを取得する
+    // agendasテーブルからもくもく会名が検索掛けた文字を含む場合、降順ソートして引数に指定した最新○件のレコードを取得する
     public function selectLimitAgendas(string $search, int $limit)
     {
         try {
