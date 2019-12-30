@@ -63,6 +63,7 @@ main>.container table input {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    outline: none;
 }
 
 main>.container table textarea {
@@ -72,6 +73,9 @@ main>.container table textarea {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    outline: none;
+    resize: none;
+
 }
 
 main>.container>form>.button {
@@ -100,6 +104,7 @@ main>.container>form>.button {
     /* 影の設定 */
     border: 2px solid #722F2F;
     /* 枠の指定 */
+    outline: none;
 }
 
 main>.container>form>.button:hover {
@@ -116,6 +121,7 @@ main>.container table ::placeholder {
 }
 
 .agenda-title {
+    margin-top: 20px;
     float: left;
 }
 
@@ -166,6 +172,71 @@ main>.container>.post>.post-main {
     height: 400px;
     padding-left: 150px;
 }
+
+main>.container>.users {
+    height: 400px;
+}
+
+main>.container>.users>.users-main {
+    text-align: center;
+}
+
+main>.container>.users>.users-main>.form>form>.form-user {
+    padding-bottom: 14px;
+}
+
+main>.container>.users>.users-main>.form>form>.form-user>.form-input {
+    font-size: 100%;
+    height: 30px;
+    width: 220px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    /*枠線*/
+    box-sizing: border-box;
+    /*横幅の解釈をpadding, borderまでとする*/
+    outline: none;
+}
+
+main>.container>.users>.users-main>.form>form>.form-user>.form-input::placeholder {
+    color: #ccc
+}
+
+main>.container>.users>.users-main>.form>form>#create-user {
+    display: inline-block;
+    border-radius: 5px;
+    /* 角丸       */
+    font-size: 12pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 12px 12px;
+    /* 余白       */
+    background: #722f2f;
+    /* 背景色     */
+    color: #ffffff;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    transition: .2s;
+    /* なめらか変化 */
+    box-shadow: 3px 3px 1.5px #666666;
+    /* 影の設定 */
+    border: 0.5px solid #722f2f;
+    /* 枠の指定 */
+    outline: none;
+}
+
+main>.container>.users>.users-main>.form>form>#create-user:hover {
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    color: #722f2f;
+    /* 背景色     */
+    background: #ffffff;
+    /* 文字色     */
+}
+
 
 main>.container>.post>.storage {
     height: 600px;

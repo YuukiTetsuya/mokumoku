@@ -16,7 +16,7 @@ class MySmarty extends Smarty
 
         $this->assign('title', 'MokuMokuApp');
         $this->assign('leftlogo', '左サイトロゴ');
-        $this->assign('rightmenu', '右サイトMENU');
+        $this->assign('rightmenu', '会員登録');
         $this->assign('docroot', $_SERVER['DOCUMENT_ROOT']);
     }
     //displayメソッドを定義
