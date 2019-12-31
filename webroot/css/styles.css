@@ -134,6 +134,11 @@ main>.container table ::placeholder {
     color: red;
 }
 
+.createUser-msg {
+    font-size: 24px;
+    color: red;
+}
+
 .mokudb {
     font-size: 24px;
 }
@@ -201,7 +206,7 @@ main>.container>.users>.users-main>.form>form>.form-user>.form-input::placeholde
     color: #ccc
 }
 
-main>.container>.users>.users-main>.form>form>#create-user {
+main>.container>.users>.users-main>.form>form>#button-user {
     display: inline-block;
     border-radius: 5px;
     /* 角丸       */
@@ -228,7 +233,7 @@ main>.container>.users>.users-main>.form>form>#create-user {
     outline: none;
 }
 
-main>.container>.users>.users-main>.form>form>#create-user:hover {
+main>.container>.users>.users-main>.form>form>#button-user:hover {
     box-shadow: none;
     /* カーソル時の影消去 */
     color: #722f2f;

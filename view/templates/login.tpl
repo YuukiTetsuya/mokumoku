@@ -3,17 +3,19 @@
         <div class="container">
             <div class="users">
                 <div class="users-main">
-                    {if $createUserMsg neq NULL} <h2 class="createUser-msg">{$createUserMsg}</h2>{/if}
+                    <h2>{$logined}</h2>
                     <h1>{$titleView}</h1>
                     <div class="form">
-                        <form action="../../app/Model/insertUsers.php" method="POST">
+                        <form action="find.php" method="POST">
                             <div class="form-user"><input class="form-input" type="text" name="userid"
                                     placeholder="{$userid}">
+                                <span>{$useridNo}</span>
                             </div>
                             <div class="form-user"><input class="form-input" type="text" name="password"
                                     placeholder="{$pass}">
+                                <span>{$passwordNo}</span>
                             </div>
-                            <input type="submit" name="button-user" id="button-user" value="作成する">
+                            <input type="submit" name="button-user" id="button-user" value="ログインする">
                             <input type="hidden" name="token" value="{$token}">
                         </form>
                     </div>
@@ -23,6 +25,9 @@
                     </div>
                 </div>
                 <div class="post-bottom paging">
+                    {foreach $currentUser as $all}
+                    <p>{$all}</p>
+                    {/foreach}
                 </div>
             </div>
         </div>
