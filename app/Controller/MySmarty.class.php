@@ -46,15 +46,18 @@ class MySmarty extends Smarty
                 $user['dateLogout'] = $logouted.'秒';
                 $user['status'] = e($_SESSION['currentUser']['status']);
                 $status['login'] = "ログイン";
+                $status['new'] = "会員登録";
                 $_SESSION['currentUser'] = null;
             }
         } else {
             $status['login'] = 'ログイン';
+            $status['new'] = '会員登録';
         }
         $this->assign('title', 'MokuMokuApp');
         $this->assign('leftlogo', '左サイトロゴ');
         $this->assign('login', $status['login']);
         $this->assign('logout', $status['logout']);
+        $this->assign('new', $status['new']);
         $this->assign('currentUser', $user);
     }
     //displayメソッドを定義
