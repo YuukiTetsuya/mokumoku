@@ -28,6 +28,11 @@ class UsersFindController extends Users
         $this->currentUser = parent::selectLoginUsers($user, $pass);
     }
 
+    public function setFindUsersLogout($user, $pass)
+    {
+        $this->currentUser = parent::selectLogoutUsers($user, $pass);
+    }
+
     public function getFindUsers()
     {
         // ログインユーザーを返す

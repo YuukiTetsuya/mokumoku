@@ -16,4 +16,3 @@ RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
 
 #ファイル一覧機能を無効にする命令
 Options -Indexes
-
