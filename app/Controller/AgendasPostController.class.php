@@ -3,7 +3,6 @@ namespace app\Controller;
 
 require_once 'app/Model/Agendas.class.php';
 require_once 'app/utility/Encode.php';
-require_once 'app/utility/sessionDestroy.php';
 
 use app\Model\Agendas;
 
@@ -41,6 +40,7 @@ class AgendasPostController extends Agendas
             global $updated;
             $updated = 'もくもく会が更新されました';
         }
+        // 更新時のみ(deleteから発行されたdeletedセッションが存在する場合のみ)削除をお知らせするメッセージを追加
         if (isset($_SESSION['deleted'])) {
             global $deleted;
             $deleted = 'もくもく会が削除されました';

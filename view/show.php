@@ -8,8 +8,10 @@ use app\Controller\MySmarty;
 
 $s = new MySmarty();
 
-// セッションを完全に破棄（作成フラグとtokenを空にする）
-sessionDestroy();
+// セッションを破棄（作成/更新/削除フラグを空にする）
+$_SESSION['created'] = null;
+$_SESSION['updated'] = null;
+$_SESSION['deleted'] = null;
 
 $s->assign('agendas', $agendas);
 $s->assign('post', $getRecord);

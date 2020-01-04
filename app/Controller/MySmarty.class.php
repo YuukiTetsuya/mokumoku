@@ -3,6 +3,7 @@ namespace app\Controller;
 
 require_once 'vendor/autoload.php';
 require_once 'app/utility/Encode.php';
+require_once 'app/utility/sessionDestroy.php';
 
 use \Smarty;
 
@@ -19,23 +20,44 @@ class MySmarty extends Smarty
 
         if (isset($_SESSION['currentUser'])) {
             if ($_SESSION['currentUser']['status'] === '1') {
+                $dateYmd = ['月', '日 ', '分'];
+                $datePlace = ['-', ' ', ':'];
                 $user['id'] = e($_SESSION['currentUser']['id']);
                 $user['user_id'] = e($_SESSION['currentUser']['user_id']);
                 $user['created'] = e($_SESSION['currentUser']['created']);
-                $user['logined'] = e($_SESSION['currentUser']['logined']);
+                $logined = preg_replace('/-/', '年', e($_SESSION['currentUser']['logined']), 1);
+                $logined = preg_replace('/:/', '時', $logined, 1);
+                $logined = str_replace($datePlace, $dateYmd, $logined);
+                $user['dateLogin'] = $logined.'秒';
+                $logouted = preg_replace('/-/', '年', e($_SESSION['currentUser']['logouted']), 1);
+                $logouted = preg_replace('/:/', '時', $logouted, 1);
+                $logouted = str_replace($datePlace, $dateYmd, $logouted);
+                $user['dateLogout'] = $logouted.'秒';
                 $user['status'] = e($_SESSION['currentUser']['status']);
                 $status['login'] = $user['user_id']."さん";
                 $status['logout'] = 'ログアウト';
             } else {
+                $user['id'] = e($_SESSION['currentUser']['id']);
+                $user['user_id'] = e($_SESSION['currentUser']['user_id']);
+                $user['created'] = e($_SESSION['currentUser']['created']);
+                $logouted = preg_replace('/-/', '年', e($_SESSION['currentUser']['logouted']), 1);
+                $logouted = preg_replace('/:/', '時', $logouted, 1);
+                $logouted = str_replace($datePlace, $dateYmd, $logouted);
+                $user['dateLogout'] = $logouted.'秒';
+                $user['status'] = e($_SESSION['currentUser']['status']);
                 $status['login'] = "ログイン";
+                $status['new'] = "会員登録";
+                $_SESSION['currentUser'] = null;
             }
         } else {
             $status['login'] = 'ログイン';
+            $status['new'] = '会員登録';
         }
         $this->assign('title', 'MokuMokuApp');
         $this->assign('leftlogo', '左サイトロゴ');
         $this->assign('login', $status['login']);
         $this->assign('logout', $status['logout']);
+        $this->assign('new', $status['new']);
         $this->assign('currentUser', $user);
     }
     //displayメソッドを定義

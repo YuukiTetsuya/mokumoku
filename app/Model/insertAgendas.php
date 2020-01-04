@@ -28,7 +28,7 @@ try {
     } else {
         $mokumokuname = $_POST['mokumokuname'];
     }
-    $stt = $db->prepare('INSERT INTO agendas(id, mokumokuname, schedule, contents, rule, ssid, pass, post_id) VALUES(:id, :mokumokuname, :schedule, :contents, :rule, :ssid, :pass, :post_id)');
+    $stt = $db->prepare('INSERT INTO agendas(id, mokumokuname, schedule, contents, rule, ssid, pass, post_id, user_id) VALUES(:id, :mokumokuname, :schedule, :contents, :rule, :ssid, :pass, :post_id, :user_id)');
     $stt->bindParam(':id', $id, PDO::PARAM_INT);
     $stt->bindParam(':mokumokuname', $mokumokuname, PDO::PARAM_STR);
     $stt->bindParam(':schedule', $_POST['schedule'], PDO::PARAM_STR);
@@ -37,6 +37,7 @@ try {
     $stt->bindParam(':ssid', $_POST['ssid'], PDO::PARAM_STR);
     $stt->bindParam(':pass', $_POST['pass'], PDO::PARAM_STR);
     $stt->bindParam(':post_id', $post_id, PDO::PARAM_STR);
+    $stt->bindParam(':user_id', $_SESSION['currentUser']['user_id'], PDO::PARAM_STR);
     $stt->execute();
     // トランザクション終了
     $db->commit();

@@ -9,5 +9,9 @@ if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
 require_once 'app/Controller/MySmarty.class.php';
 require_once 'app/utility/getRecordUser.php';
 
-$_SESSION['currentUser'] = $loginUser;
-header("location: login.php");
+if (empty($loginUser)) {
+    header("location: login.php");
+} else {
+    $_SESSION['currentUser'] = $loginUser;
+    header("location: profile.php");
+}

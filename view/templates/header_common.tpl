@@ -4,10 +4,13 @@
         </div>
         <div class="header-right">
             {if $smarty.server.REQUEST_URI eq '/mokumoku/' and $currentUser.status neq '1'}
+            <a href="view/users/new.php">{$new}</a>
             <a href="view/users/login.php">{$login}</a>
             {elseif strpos($smarty.server.REQUEST_URI, '/view/users') and $currentUser.status neq '1'}
+            <a href="new.php">{$new}</a>
             <a href="login.php">{$login}</a>
             {elseif strpos($smarty.server.REQUEST_URI, '/view/') and $currentUser.status neq '1'}
+            <a href="users/new.php">{$new}</a>
             <a href="users/login.php">{$login}</a>
             {elseif $smarty.server.REQUEST_URI eq '/mokumoku/' and $currentUser.status eq '1'}
             <a href="view/users/profile.php">{$login}</a>

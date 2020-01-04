@@ -3,7 +3,7 @@
         <div class="container">
             <div class="users">
                 <div class="users-main">
-                    <h2>{$logined}</h2>
+                    <h2>{$loginFlg}</h2>
                     <h1>{$titleView}</h1>
                     <div class="form">
                         <form action="find.php" method="POST">
@@ -25,9 +25,6 @@
                     </div>
                 </div>
                 <div class="post-bottom paging">
-                    {foreach $currentUser as $all}
-                    <p>{$all}</p>
-                    {/foreach}
                 </div>
             </div>
         </div>
