@@ -31,6 +31,9 @@
                                 {$agendas.pass} {$post.pass}
                             </span>
                         </span>
+                        <div class="subtitle" id="weight">作成者</div>
+                        <span>{$post.user_id}</span>
+                        <span></span>
                     </div>
                     <div class="post-bottom">
                     </div>

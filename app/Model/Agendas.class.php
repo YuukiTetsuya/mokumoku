@@ -26,6 +26,7 @@ class Agendas
                 $item['ssid'] = e($data['ssid']);
                 $item['pass'] = e($data['pass']);
                 $item['post_id'] = e($data['post_id']);
+                $item['user_id'] = e($data['user_id']);
             };
         } catch (PDOException $e) {
             "エラーが発生しました:{$e->getMessage()}";
