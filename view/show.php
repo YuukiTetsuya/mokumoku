@@ -12,10 +12,12 @@ $s = new MySmarty();
 $_SESSION['created'] = null;
 $_SESSION['updated'] = null;
 $_SESSION['deleted'] = null;
+$_SESSION['validated'] = null;
 
 $s->assign('agendas', $agendas);
 $s->assign('post', $getRecord);
 $s->assign('create', $created);
 $s->assign('update', $updated);
+$s->assign('edit', $validatedEdit);
 
 $s->d();

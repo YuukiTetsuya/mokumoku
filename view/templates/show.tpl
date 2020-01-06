@@ -2,7 +2,7 @@
     <main>
         <div class="container">
             <div class="post">
-                <h1>{$create}{$update}{$delete}</h1>
+                <h1>{$create}{$update}{$delete}{$edit}</h1>
                 <div class="post-main">
                     <div class="post-left">
                         <div class="subtitle" id="weight">

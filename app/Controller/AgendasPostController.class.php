@@ -45,6 +45,11 @@ class AgendasPostController extends Agendas
             global $deleted;
             $deleted = 'もくもく会が削除されました';
         }
+        // ログインユーザーと投稿ユーザーidが違う場合のみメッセージを追加
+        if (isset($_SESSION['validated']['edit'])) {
+            global $validatedEdit;
+            $validatedEdit = '投稿者ユーザーのみ編集できます';
+        }
         // GETしたidと同じpost_idのレコードを返す
         return $this->post;
     }

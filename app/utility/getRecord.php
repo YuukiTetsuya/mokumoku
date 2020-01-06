@@ -8,6 +8,8 @@ use app\Controller\AgendasPostController;
 $created = null;
 $updated = null;
 $deleted = null;
+$validatedEdit = null;
+$validatedDelete = null;
 
 $agendaPost = new AgendasPostController();
 // GETしたidの値をセットする
