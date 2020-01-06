@@ -19,7 +19,6 @@
                             {$agendas.rule}
                             <div class="description">{$post.rule}</div>
                         </div>
-
                         <div class="edit"><a href="edit.php?id={$post.post_id}">{$editmsg}</a></div>
                         <div class="delete"><a
                                 href="../app/Model/destroyAgendas.php?id={$post.post_id}">{$deletemsg}</a></div>
