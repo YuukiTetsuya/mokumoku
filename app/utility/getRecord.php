@@ -9,7 +9,7 @@ $created = null;
 $updated = null;
 $deleted = null;
 $validatedEdit = null;
-$validatedDelete = null;
+$validatedDestroy = null;
 
 $agendaPost = new AgendasPostController();
 // GETしたidの値をセットする

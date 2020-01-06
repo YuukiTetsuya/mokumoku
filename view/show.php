@@ -2,7 +2,6 @@
 require_once 'app/Controller/MySmarty.class.php';
 require_once 'app/utility/getTitle.php';
 require_once 'app/utility/getRecord.php';
-require_once 'app/utility/sessionDestroy.php';
 
 use app\Controller\MySmarty;
 
@@ -19,5 +18,6 @@ $s->assign('post', $getRecord);
 $s->assign('create', $created);
 $s->assign('update', $updated);
 $s->assign('edit', $validatedEdit);
+$s->assign('destroy', $validatedDestroy);
 
 $s->d();

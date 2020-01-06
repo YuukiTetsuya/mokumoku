@@ -50,6 +50,11 @@ class AgendasPostController extends Agendas
             global $validatedEdit;
             $validatedEdit = '投稿者ユーザーのみ編集できます';
         }
+        // ログインユーザーと投稿ユーザーidが違う場合のみメッセージを追加
+        if (isset($_SESSION['validated']['destroy'])) {
+            global $validatedDestroy;
+            $validatedDestroy = '投稿者ユーザーのみ削除できます';
+        }
         // GETしたidと同じpost_idのレコードを返す
         return $this->post;
     }
