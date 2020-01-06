@@ -20,4 +20,9 @@ $s->assign('update', $updated);
 $s->assign('edit', $validatedEdit);
 $s->assign('destroy', $validatedDestroy);
 
+// ログインユーザーの投稿のみ編集/削除を表示
+if ($getRecord['user_id'] === $_SESSION['currentUser']['user_id']) {
+    $s->assign('editmsg', '編集');
+    $s->assign('deletemsg', '削除');
+}
 $s->d();

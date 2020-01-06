@@ -7,7 +7,6 @@ require_once 'app/utility/getRecord.php';
 if ($getRecord['user_id'] !== $_SESSION['currentUser']['user_id']) {
     $_SESSION['validated']['destroy'] = true;
     header("location: ../../view/show.php?id=${getRecord['post_id']}");
-    die();
 } else {
     // post_idが送信されているかどうか確認。なければ空を代入(nullはpost_idには入らないので、例外処理される)
     if (isset($_GET['id'])) {
