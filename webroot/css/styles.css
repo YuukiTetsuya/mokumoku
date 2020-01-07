@@ -344,6 +344,14 @@ main>.container>.post>.post-main>form>.post-right>#wifi>.ssid-pass {
     display: none;
 }
 
+.validate {
+    display: none;
+}
+
+#validate {
+    color: red;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0

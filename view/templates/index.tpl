@@ -1,7 +1,7 @@
     {include file='head_common.tpl'}
     <main>
         <div class="container">
-            <form action="app/Model/insertAgendas.php" method="POST">
+            <form action="app/Model/insertAgendas.php" method="POST" name="index-check" id="index-check">
                 <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
                         <div class="subtitle agenda-title">{$agendas.title}{if $deletemsg neq
@@ -25,7 +25,9 @@
                             <textarea name="{$agendakey}" id="contents" cols="60" rows="10"
                                 placeholder="{$frontValue.$agendakey}"></textarea>
                             {else}
-                            <input type="text" name="{$agendakey}" placeholder="{$frontValue.$agendakey}">
+                            <b id="validate" class="validate">※特定の記号文字は入力出来ません。</b>
+                            <input type="text" name="{$agendakey}" id="{$agendakey}"
+                                placeholder="{$frontValue.$agendakey}">
                             {/if}
                         </td>
                     </tr>
@@ -33,7 +35,7 @@
                 </table>
                 <input type="hidden" name="token" value="{$token}">
                 <input type="hidden" name="post_id" value="{$post_id}">
-                <input type="submit" value="作成する" class="button">
+                <input type="submit" id="submit" value="作成する" class="button">
             </form>
             <p class="mokudb"><a href="view/storage.php">もくもくデータベース</a></p>
             <ul class="slider">
