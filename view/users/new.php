@@ -16,6 +16,8 @@ if (isset($_SESSION['createdUser'])) {
         $createUserMsg = 'ユーザー名は64文字以内にしてください';
     } elseif ($_SESSION['createdUser'] === 'notUnique') {
         $createUserMsg = '同一のユーザー名が存在します';
+    } elseif ($_SESSION['createdUser'] === 'check') {
+        $createUserMsg = 'ユーザー名に不正な文字が入力されています';
     }
     if ($_SESSION['createdPass'] === 'nullPass') {
         $createPassMsg = 'パスワードが空です';

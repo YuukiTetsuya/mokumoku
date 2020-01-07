@@ -22,13 +22,17 @@ try {
     $stu->execute();
     $result = $stu->fetch(PDO::FETCH_ASSOC);
     if ($result === false && mb_strlen($userid) <= 64 && $passwordUser !== '' && mb_strlen($passwordUser) >= 6) {
-        $id = null;
-        $stt = $db->prepare('INSERT INTO users(id, user_id, password) VALUES(:id, :user_id, :password)');
-        $stt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stt->bindParam(':user_id', $_POST['userid'], PDO::PARAM_STR);
-        $stt->bindParam(':password', $password, PDO::PARAM_STR);
-        $_SESSION['createdUser'] = 'created';
-        $stt->execute();
+        if (preg_match('/^[\w]+$/', $userid)) {
+            $id = null;
+            $stt = $db->prepare('INSERT INTO users(id, user_id, password) VALUES(:id, :user_id, :password)');
+            $stt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stt->bindParam(':user_id', $_POST['userid'], PDO::PARAM_STR);
+            $stt->bindParam(':password', $password, PDO::PARAM_STR);
+            $_SESSION['createdUser'] = 'created';
+            $stt->execute();
+        } else {
+            $_SESSION['createdUser'] = 'check';
+        }
     } else {
         if ($userid === "") {
             $_SESSION['createdUser'] = 'nullCreated';
