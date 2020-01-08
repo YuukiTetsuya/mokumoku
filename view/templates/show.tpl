@@ -13,7 +13,9 @@
                         </div>
                         <div class="contents">
                             {$agendas.contents}
-                            <div class="description">{$post.contents}</div>
+                            <div class="description">
+                                <pre>{$post.contents}</pre>
+                            </div>
                         </div>
                         <div class="rule">
                             {$agendas.rule}
