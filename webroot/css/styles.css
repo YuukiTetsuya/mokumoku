@@ -59,7 +59,6 @@ main>.container table input {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    outline: none;
 }
 
 main>.container table textarea {
@@ -69,9 +68,7 @@ main>.container table textarea {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    outline: none;
     resize: none;
-
 }
 
 main>.container>form>.button {
@@ -140,6 +137,15 @@ main>.container table ::placeholder {
 .paging {
     text-align: center;
 }
+
+input[type="text"]:focus {
+    outline: 0;
+}
+
+textarea {
+    outline: none;
+}
+
 
 #paging-textnext,
 #paging-textprev,
