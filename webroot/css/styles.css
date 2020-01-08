@@ -48,10 +48,6 @@ main {
     color: #545454;
 }
 
-main>.container form {
-    position: relative;
-}
-
 main>.container table #wifimsg {
     border: none;
 }
@@ -80,8 +76,6 @@ main>.container table textarea {
 
 main>.container>form>.button {
     border-radius: 5%;
-    position: absolute;
-    left: 54.5%;
     z-index: 1;
     /* 角丸       */
     font-size: 18pt;
