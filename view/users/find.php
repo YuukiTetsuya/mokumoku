@@ -10,8 +10,8 @@ require_once 'app/Controller/MySmarty.class.php';
 require_once 'app/utility/getRecordUser.php';
 
 if (empty($loginUser)) {
-    header("location: login.php");
+    header("location: login");
 } else {
     $_SESSION['currentUser'] = $loginUser;
-    header("location: profile.php");
+    header("location: profile");
 }

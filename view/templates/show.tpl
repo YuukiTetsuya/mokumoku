@@ -2,7 +2,7 @@
     <main>
         <div class="container">
             <div class="post">
-                <h1>{$create}{$update}{$delete}</h1>
+                <h1>{$create}{$update}{$delete}{$edit}{$destroy}</h1>
                 <div class="post-main">
                     <div class="post-left">
                         <div class="subtitle" id="weight">
@@ -13,15 +13,18 @@
                         </div>
                         <div class="contents">
                             {$agendas.contents}
-                            <div class="description">{$post.contents}</div>
+                            <div class="description">
+                                <pre>{$post.contents}</pre>
+                            </div>
                         </div>
                         <div class="rule">
                             {$agendas.rule}
                             <div class="description">{$post.rule}</div>
                         </div>
-                        <div class="edit"><a href="edit.php?id={$post.post_id}">編集</a></div>
-                        <div class="delete"><a href="../app/Model/destroyAgendas.php?id={$post.post_id}">削除</a></div>
-                        <div class="mokudb"><a href="../view/storage.php">もくもくデータベース</a></div>
+                        <div class="edit"><a href="edit?id={$post.post_id}">{$editmsg}</a></div>
+                        <div class="delete"><a href="../app/Model/destroyAgendas?id={$post.post_id}">{$deletemsg}</a>
+                        </div>
+                        <div class="mokudb"><a href="../view/storage">もくもくデータベース</a></div>
                     </div>
                     <div class="post-right">
                         <span id="wifi">
@@ -31,6 +34,9 @@
                                 {$agendas.pass} {$post.pass}
                             </span>
                         </span>
+                        <div class="subtitle" id="weight">作成者</div>
+                        <span>{$post.user_id}</span>
+                        <span></span>
                     </div>
                     <div class="post-bottom">
                     </div>

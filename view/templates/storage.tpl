@@ -12,7 +12,7 @@
                         <ol>
                             {foreach $tenAgendas as $all}
                             <li>
-                                <a href="show.php?id={$all.post_id}">{$all.mokumokuname}</a>
+                                <a href="show?id={$all.post_id}">{$all.mokumokuname}</a>
                                 <ul>
                                     <li>
                                         {$all.schedule}
@@ -24,34 +24,34 @@
                     </div>
                     <div class="post-right">
                         <h2>データベース内検索</h2>
-                        <form id="search_form" name="search_form" action="find.php" method="POST"
-                            onsubmit="return check()">
+                        <form id="search_form" name="search_form" action="find" method="POST" onsubmit="return check()">
                             <input type="text" id="search_form" name="search" placeholder="{$findmokumoku}">
                             <input type="hidden" name="token" value="{$token}">
                             <input type="submit" value="検索する">
                             <div class="check-msg" id="check-msg">※もくもく会名を入力してください</div>
+                            <div class="check-vali-msg" id="check-vali-msg">※特定の記号文字は入力出来ません</div>
                         </form>
                     </div>
                 </div>
                 <div class="post-bottom paging">
                     <div class="paging-text">
                         {if $getPaging['current'] lt $paging and $getPaging['current'] ge 0 and $paging gt 1}
-                        <a id="paging-textnext" href="storage.php?page={$getPaging['next']}">次のページへ</a>
+                        <a id="paging-textnext" href="storage?page={$getPaging['next']}">次のページへ</a>
                         {elseif $getPaging['current'] ge 1 and $paging gt 1}
-                        <a id="paging-textprev" href="storage.php?page={$getPaging['prev']}">前のページへ</a>
+                        <a id="paging-textprev" href="storage?page={$getPaging['prev']}">前のページへ</a>
                         {/if}
                     </div>
                     <div class="paging-number">
                         {if $getPaging['current'] gt 1 and $paging gt 1}
-                        <a id="paging-prev" href="storage.php?page={$getPaging['prev']}">◀</a>
+                        <a id="paging-prev" href="storage?page={$getPaging['prev']}">◀</a>
                         {/if}
                         {for $i = 1 to $paging step 1}
                         {if $paging gt 1}
-                        <a id="paging-number" href="storage.php?page={$i}">{$i}</a>
+                        <a id="paging-number" href="storage?page={$i}">{$i}</a>
                         {/if}
                         {/for}
                         {if $getPaging['current'] lt $paging and $getPaging['current'] ge 0 and $paging gt 1}
-                        <a id="paging-next" href="storage.php?page={$getPaging['next']}">▶</a>
+                        <a id="paging-next" href="storage?page={$getPaging['next']}">▶</a>
                         {/if}
                     </div>
                 </div>

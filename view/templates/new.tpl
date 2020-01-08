@@ -4,6 +4,7 @@
             <div class="users">
                 <div class="users-main">
                     {if $createUserMsg neq NULL} <h2 class="createUser-msg">{$createUserMsg}</h2>{/if}
+                    {if $createPassMsg neq NULL} <h2 class="createUser-msg">{$createPassMsg}</h2>{/if}
                     <h1>{$titleView}</h1>
                     <div class="form">
                         <form action="../../app/Model/insertUsers.php" method="POST">

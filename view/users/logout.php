@@ -6,8 +6,8 @@ $_SESSION['logoutToken'] = $_SESSION['token'];
 require_once 'view/users/destroyLogout.php';
 
 if (empty($logoutUser)) {
-    header("location: login.php");
+    header("location: login");
 } else {
     $_SESSION['currentUser'] = $logoutUser;
-    header("location: login.php");
+    header("location: login");
 }

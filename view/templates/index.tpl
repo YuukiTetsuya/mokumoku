@@ -1,12 +1,13 @@
     {include file='head_common.tpl'}
     <main>
         <div class="container">
-            <form action="app/Model/insertAgendas.php" method="POST">
+            <form action="app/Model/insertAgendas.php" method="POST" name="index-check" id="index-check">
                 <table border="2" cellpadding="5" cellspacing="5">
                     <caption>
                         <div class="subtitle agenda-title">{$agendas.title}{if $deletemsg neq
                             ''} <span class="delete-msg">{$deletemsg}</span>
                             {/if}
+                            <b id="validate" class="validate vali-msg">※特定の記号文字は入力出来ません。</b>
                         </div>
                     </caption>
                     {foreach from=$agendas item=$agenda key=$agendakey}
@@ -25,7 +26,9 @@
                             <textarea name="{$agendakey}" id="contents" cols="60" rows="10"
                                 placeholder="{$frontValue.$agendakey}"></textarea>
                             {else}
-                            <input type="text" name="{$agendakey}" placeholder="{$frontValue.$agendakey}">
+                            <b id="validate-null" class="validate-null">※もくもく会名を入力してください。</b>
+                            <input type="text" name="{$agendakey}" id="{$agendakey}"
+                                placeholder="{$frontValue.$agendakey}">
                             {/if}
                         </td>
                     </tr>
@@ -33,9 +36,9 @@
                 </table>
                 <input type="hidden" name="token" value="{$token}">
                 <input type="hidden" name="post_id" value="{$post_id}">
-                <input type="submit" value="作成する" class="button">
+                <input type="submit" id="submit" value="作成する" class="button">
             </form>
-            <p class="mokudb"><a href="view/storage.php">もくもくデータベース</a></p>
+            <p class="mokudb"><a href="view/storage">もくもくデータベース</a></p>
             <ul class="slider">
                 <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
                 <li><a href="#"><img src="webroot/image/php.jpg" alt="image02"></a></li>

@@ -48,10 +48,6 @@ main {
     color: #545454;
 }
 
-main>.container form {
-    position: relative;
-}
-
 main>.container table #wifimsg {
     border: none;
 }
@@ -63,7 +59,6 @@ main>.container table input {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    outline: none;
 }
 
 main>.container table textarea {
@@ -73,15 +68,11 @@ main>.container table textarea {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    outline: none;
     resize: none;
-
 }
 
 main>.container>form>.button {
     border-radius: 5%;
-    position: absolute;
-    left: 54.5%;
     z-index: 1;
     /* 角丸       */
     font-size: 18pt;
@@ -145,6 +136,24 @@ main>.container table ::placeholder {
 
 .paging {
     text-align: center;
+}
+
+input[type="text"]:focus {
+    outline: 0;
+}
+
+textarea {
+    outline: none;
+}
+
+#useridNo {
+    color: red;
+    font-weight: bold;
+}
+
+#passwordNo {
+    color: red;
+    font-weight: bold;
 }
 
 #paging-textnext,
@@ -342,6 +351,31 @@ main>.container>.post>.post-main>form>.post-right>#wifi>.ssid-pass {
 .check-msg {
     color: red;
     display: none;
+}
+
+.check-vali-msg {
+    color: red;
+    display: none;
+}
+
+.validate {
+    display: none;
+}
+
+.vali-msg {
+    font-size: 24px !important;
+}
+
+#validate {
+    color: red;
+}
+
+.validate-null {
+    display: none;
+}
+
+#validate-null {
+    color: red;
 }
 
 @keyframes fadeIn {

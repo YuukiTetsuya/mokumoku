@@ -42,7 +42,7 @@ class Users
                 }
             } else {
                 $_SESSION['login']['logined'] = '認証に失敗しました';
-                $_SESSION['login']['useridNo'] = 'ユーザーIDが違います';
+                $_SESSION['login']['useridNo'] = 'ユーザー名が違います';
             }
         } catch (PDOException $e) {
             $db->rollBack();

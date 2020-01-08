@@ -7,13 +7,13 @@
                     <h1>{$titleView}</h1>
                     <div class="form">
                         <form action="find.php" method="POST">
+                            <span id="useridNo">{$useridNo}</span>
                             <div class="form-user"><input class="form-input" type="text" name="userid"
                                     placeholder="{$userid}">
-                                <span>{$useridNo}</span>
                             </div>
+                            <span id="passwordNo">{$passwordNo}</span>
                             <div class="form-user"><input class="form-input" type="text" name="password"
                                     placeholder="{$pass}">
-                                <span>{$passwordNo}</span>
                             </div>
                             <input type="submit" name="button-user" id="button-user" value="ログインする">
                             <input type="hidden" name="token" value="{$token}">

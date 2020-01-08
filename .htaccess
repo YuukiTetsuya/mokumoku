@@ -1,18 +1,13 @@
-Options +FollowSymLinks
-
 RewriteEngine on
-
-RewriteBase /
+# php拡張子を隠す
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+# index.html/index.phpはルートに移動
 RewriteCond %{REQUEST_URI} index(.*)\.html
 RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
-#RewriteCond %{REQUEST_URI} index(.*)\.php
-#RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
+RewriteCond %{REQUEST_URI} /mokumoku/index.php
+RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
 
-#AuthUserfile /.htpasswd
-#AuthGroupfile /dev/null
-#AuthName "Please enter your ID and password"
-#AuthType Basic
-#require valid-user
-
-#ファイル一覧機能を無効にする命令
+# ファイル一覧機能を無効にする命令
 Options -Indexes

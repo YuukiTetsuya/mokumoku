@@ -10,6 +10,11 @@ use app\Controller\MySmarty;
 
 $s = new MySmarty();
 
+if ($getRecord['user_id'] !== $_SESSION['currentUser']['user_id']) {
+    $_SESSION['validated']['edit'] = true;
+    header("location: show?id=${getRecord['post_id']}");
+};
+
 $s->assign('token', $_SESSION['token']);
 $s->assign('agendas', $agendas);
 $s->assign('post', $getRecord);

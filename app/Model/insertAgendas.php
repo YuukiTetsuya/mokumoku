@@ -50,4 +50,4 @@ try {
 // 作成時のみ作成フラグを立てる（createdをtrueにする）
 $_SESSION['created'] = true;
 
-header("location: ../../view/show.php?id=$post_id");
+header("location: ../../view/show?id=$post_id");

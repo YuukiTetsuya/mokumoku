@@ -22,7 +22,7 @@ try {
     $db->beginTransaction();
     if ($_POST['mokumokuname'] == '') {
         $mokumokuname = null;
-        header("location: ../../view/edit.php?id=$post_id");
+        header("location: ../../view/edit?id=$post_id");
         die('もくもく会名を入力してください');
     } else {
         $mokumokuname = $_POST['mokumokuname'];
@@ -35,6 +35,8 @@ try {
     $stt->bindParam(':ssid', $_POST['ssid'], PDO::PARAM_STR);
     $stt->bindParam(':pass', $_POST['pass'], PDO::PARAM_STR);
     $stt->bindParam(':post_id', $post_id, PDO::PARAM_STR);
+    // 更新された場合に、更新フラグを立てる（updatedをtrueにする）
+    $_SESSION['updated'] = true;
     $stt->execute();
     // トランザクションをコミット
     $db->commit();
@@ -43,7 +45,5 @@ try {
     $db->rollBack();
     print "エラーが発生しました:{$e->getMessage()}";
 }
-    // 更新された場合に、更新フラグを立てる（updatedをtrueにする）
-    $_SESSION['updated'] = true;
 
-header("location: ../../view/show.php?id=$post_id");
+header("location: ../../view/show?id=$post_id");
