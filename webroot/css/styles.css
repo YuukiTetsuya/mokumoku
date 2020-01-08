@@ -146,6 +146,15 @@ textarea {
     outline: none;
 }
 
+#useridNo {
+    color: red;
+    font-weight: bold;
+}
+
+#passwordNo {
+    color: red;
+    font-weight: bold;
+}
 
 #paging-textnext,
 #paging-textprev,
