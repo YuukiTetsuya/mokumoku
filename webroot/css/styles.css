@@ -344,11 +344,28 @@ main>.container>.post>.post-main>form>.post-right>#wifi>.ssid-pass {
     display: none;
 }
 
+.check-vali-msg {
+    color: red;
+    display: none;
+}
+
 .validate {
     display: none;
 }
 
+.vali-msg {
+    font-size: 24px !important;
+}
+
 #validate {
+    color: red;
+}
+
+.validate-null {
+    display: none;
+}
+
+#validate-null {
     color: red;
 }
 

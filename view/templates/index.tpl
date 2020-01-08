@@ -7,6 +7,7 @@
                         <div class="subtitle agenda-title">{$agendas.title}{if $deletemsg neq
                             ''} <span class="delete-msg">{$deletemsg}</span>
                             {/if}
+                            <b id="validate" class="validate vali-msg">※特定の記号文字は入力出来ません。</b>
                         </div>
                     </caption>
                     {foreach from=$agendas item=$agenda key=$agendakey}
@@ -25,7 +26,7 @@
                             <textarea name="{$agendakey}" id="contents" cols="60" rows="10"
                                 placeholder="{$frontValue.$agendakey}"></textarea>
                             {else}
-                            <b id="validate" class="validate">※特定の記号文字は入力出来ません。</b>
+                            <b id="validate-null" class="validate-null">※もくもく会名を入力してください。</b>
                             <input type="text" name="{$agendakey}" id="{$agendakey}"
                                 placeholder="{$frontValue.$agendakey}">
                             {/if}

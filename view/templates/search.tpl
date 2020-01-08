@@ -32,6 +32,7 @@
                             <input type="hidden" name="token" value="{$token}">
                             <input type="submit" value="検索する">
                             <div class="check-msg" id="check-msg">※もくもく会名を入力してください</div>
+                            <div class="check-vali-msg" id="check-vali-msg">※特定の記号文字は入力出来ません</div>
                         </form>
                     </div>
                 </div>
