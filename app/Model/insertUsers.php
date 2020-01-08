@@ -54,4 +54,4 @@ try {
 }
 
 
-header("location: ../../view/users/new.php?user_id=$userid");
+header("location: ../../view/users/new?user_id=$userid");

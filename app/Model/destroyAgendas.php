@@ -6,7 +6,7 @@ require_once 'app/utility/getRecord.php';
 // ログインユーザーの投稿のみ削除可
 if ($getRecord['user_id'] !== $_SESSION['currentUser']['user_id']) {
     $_SESSION['validated']['destroy'] = true;
-    header("location: ../../view/show.php?id=${getRecord['post_id']}");
+    header("location: ../../view/show?id=${getRecord['post_id']}");
 } else {
     // post_idが送信されているかどうか確認。なければ空を代入(nullはpost_idには入らないので、例外処理される)
     if (isset($_GET['id'])) {

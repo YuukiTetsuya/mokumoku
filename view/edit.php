@@ -12,7 +12,7 @@ $s = new MySmarty();
 
 if ($getRecord['user_id'] !== $_SESSION['currentUser']['user_id']) {
     $_SESSION['validated']['edit'] = true;
-    header("location: show.php?id=${getRecord['post_id']}");
+    header("location: show?id=${getRecord['post_id']}");
 };
 
 $s->assign('token', $_SESSION['token']);

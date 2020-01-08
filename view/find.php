@@ -18,4 +18,4 @@ if (isset($_POST['search'])) {
     $keyword = null;
 }
 
-header("location: search.php?keyword=$keyword");
+header("location: search?keyword=$keyword");

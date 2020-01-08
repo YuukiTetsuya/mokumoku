@@ -22,7 +22,7 @@ try {
     $db->beginTransaction();
     if ($_POST['mokumokuname'] == '') {
         $mokumokuname = null;
-        header("location: ../../view/edit.php?id=$post_id");
+        header("location: ../../view/edit?id=$post_id");
         die('もくもく会名を入力してください');
     } else {
         $mokumokuname = $_POST['mokumokuname'];
@@ -46,4 +46,4 @@ try {
     print "エラーが発生しました:{$e->getMessage()}";
 }
 
-header("location: ../../view/show.php?id=$post_id");
+header("location: ../../view/show?id=$post_id");
