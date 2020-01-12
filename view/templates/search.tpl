@@ -38,22 +38,22 @@
                 <div class="post-bottom paging">
                     <div class="paging-text">
                         {if $getPaging['current'] lt $paging and $getPaging['current'] ge 0 and $paging gt 1}
-                        <a id="paging-textnext" href="search?keyword={$titleView}&page={$getPaging['next']}">次のページへ</a>
+                        <a id="paging-textnext" href="search?q={$titleView}&page={$getPaging['next']}">次のページへ</a>
                         {elseif $getPaging['current'] ge 1 and $paging gt 1}
-                        <a id="paging-textprev" href="search?keyword={$titleView}&page={$getPaging['prev']}">前のページへ</a>
+                        <a id="paging-textprev" href="search?q={$titleView}&page={$getPaging['prev']}">前のページへ</a>
                         {/if}
                     </div>
                     <div class="paging-number">
                         {if $getPaging['current'] gt 1 and $paging gt 1}
-                        <a id="paging-prev" href="search?keyword={$titleView}&page={$getPaging['prev']}">◀</a>
+                        <a id="paging-prev" href="search?q={$titleView}&page={$getPaging['prev']}">◀</a>
                         {/if}
                         {for $i = 1 to $paging step 1}
                         {if $paging gt 1}
-                        <a id="paging-number" href="search?keyword={$titleView}&page={$i}">{$i}</a>
+                        <a id="paging-number" href="search?q={$titleView}&page={$i}">{$i}</a>
                         {/if}
                         {/for}
                         {if $getPaging['current'] lt $paging and $getPaging['current'] ge 0 and $paging gt 1}
-                        <a id="paging-next" href="search?keyword={$titleView}&page={$getPaging['next']}">▶</a>
+                        <a id="paging-next" href="search?q={$titleView}&page={$getPaging['next']}">▶</a>
                         {/if}
                     </div>
                 </div>

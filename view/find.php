@@ -13,9 +13,9 @@ if (isset($_SESSION['token'])) {
 
 // 検索キーワードが送信されているかどうか確認。なければ空を代入
 if (isset($_POST['search'])) {
-    $keyword = $_POST['search'];
+    $query = $_POST['search'];
 } else {
-    $keyword = null;
+    $query = null;
 }
 
-header("location: search?keyword=$keyword");
+header("location: search?q=$query");

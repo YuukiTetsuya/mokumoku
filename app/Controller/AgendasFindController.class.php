@@ -15,8 +15,8 @@ class AgendasFindController extends Agendas
     public function __construct()
     {
         // 検索キーワードを代入
-        if (isset(($_GET['keyword'])) && $_GET['keyword'] !== '') {
-            $this->search = '%'.e($_GET['keyword']).'%';
+        if (isset(($_GET['q'])) && $_GET['q'] !== '') {
+            $this->search = '%'.e($_GET['q']).'%';
         } else {
             $this->search = '';
         };

@@ -9,7 +9,7 @@ use app\Controller\MySmarty;
 
 // 検索メッセージの初期化
 $findmsg = '';
-$keyword = e($_GET['keyword']);
+$query = e($_GET['q']);
 if ($_SESSION['finded'] == 'true') {
     if ($findAllCnt >= 1) {
         $findmsg = 'の検索結果　'.$findAllCnt.'件見つかりました';
@@ -21,7 +21,7 @@ if ($_SESSION['finded'] == 'true') {
 $s = new MySmarty();
 $s->assign('agendas', $agendas);
 $s->assign('token', $_SESSION['token']);
-$s->assign('titleView', $keyword);
+$s->assign('titleView', $query);
 $s->assign('findmokumoku', 'もくもく会名で検索');
 $s->assign('findAgendas', $getRecordFind);
 $s->assign('findmsg', $findmsg);
