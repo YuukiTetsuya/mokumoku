@@ -13,6 +13,11 @@ $_SESSION['updated'] = null;
 $_SESSION['deleted'] = null;
 $_SESSION['validated'] = null;
 
+// ログインしていない場合は非会員とする
+if ($getRecord['user_id'] === '') {
+    $getRecord['user_id'] = '非会員';
+}
+
 $s->assign('agendas', $agendas);
 $s->assign('post', $getRecord);
 $s->assign('create', $created);
