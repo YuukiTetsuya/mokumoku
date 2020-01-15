@@ -35,7 +35,7 @@
                             </span>
                         </span>
                         <div class="subtitle" id="weight">作成者</div>
-                        <span>{$post.user_id}</span>
+                        <span><a href="users/author?id={$post.post_id}">{$post.user_id}</a></span>
                         <span></span>
                     </div>
                     <div class="post-bottom">

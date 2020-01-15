@@ -88,4 +88,29 @@ class Users
         }
         return $getLogoutUser;
     }
+
+    public function selectUsers(string $postUser)
+    {
+        try {
+            $db = getDb();
+            $stt = $db->prepare('SELECT * FROM agendas WHERE post_id = :post_id');
+            $stt->bindParam(':post_id', $postUser, PDO::PARAM_STR);
+            $stt->execute();
+            $postUser = $stt->fetch(PDO::FETCH_ASSOC);
+            $stu = $db->prepare('SELECT * FROM users WHERE user_id = :user_id');
+            $stu->bindParam(':user_id', $postUser['user_id'], PDO::PARAM_STR);
+            $stu->execute();
+            while ($data = $stu->fetch(PDO::FETCH_ASSOC)) {
+                $item['id'] = e($data['id']);
+                $item['user_id'] = e($data['user_id']);
+                $item['created'] = e($data['created']);
+                $item['logined'] = e($data['logined']);
+                $item['logouted'] = e($data['logouted']);
+            };
+        } catch (\PDOException $e) {
+            $db->rollBack();
+            "エラーが発生しました:{$e->getMessage()}";
+        }
+        return $item;
+    }
 }
