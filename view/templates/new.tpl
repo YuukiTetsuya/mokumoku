@@ -11,7 +11,7 @@
                             <div class="form-user"><input class="form-input" type="text" name="userid"
                                     placeholder="{$userid}">
                             </div>
-                            <div class="form-user"><input class="form-input" type="text" name="password"
+                            <div class="form-user"><input class="form-input" type="password" name="password"
                                     placeholder="{$pass}">
                             </div>
                             <input type="submit" name="button-user" id="button-user" value="作成する">
