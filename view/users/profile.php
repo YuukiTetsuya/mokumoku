@@ -17,7 +17,7 @@ $_SESSION['logout'] = null;
 $s = new MySmarty();
 
 $s->assign('titleView', 'プロフィール');
-$s->assign('userid', 'ユーザー名');
+$s->assign('userid', 'ID名');
 $s->assign('loginTime', '最新ログイン日時');
 $s->assign('logoutTime', '最新ログアウト日時');
 $s->assign('pass', 'PassWord');
