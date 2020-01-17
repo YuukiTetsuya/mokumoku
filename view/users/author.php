@@ -20,4 +20,5 @@ $s->assign('userid', 'ID名');
 $s->assign('token', $_SESSION['token']);
 $s->assign('postUser', $getUsers);
 $s->assign('created', '作成日時');
+$s->assign('users', 'users');
 $s->d();

@@ -36,4 +36,5 @@ $s->assign('token', $_SESSION['token']);
 $s->assign('createUserMsg', $createUserMsg);
 $s->assign('createPassMsg', $createPassMsg);
 $s->assign('validNew', $validNew);
+$s->assign('users', 'users');
 $s->d();

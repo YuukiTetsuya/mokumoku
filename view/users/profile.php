@@ -23,4 +23,5 @@ $s->assign('logoutTime', '最新ログアウト日時');
 $s->assign('pass', 'PassWord');
 $s->assign('token', $_SESSION['token']);
 $s->assign('loginFlg', $loginFlg);
+$s->assign('users', 'users');
 $s->d();

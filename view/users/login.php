@@ -30,4 +30,5 @@ $s->assign('token', $_SESSION['token']);
 $s->assign('loginFlg', $loginFlg);
 $s->assign('useridNo', $useridNo);
 $s->assign('passwordNo', $passwordNo);
+$s->assign('users', 'users');
 $s->d();
