@@ -156,6 +156,10 @@ textarea {
     font-weight: bold;
 }
 
+.nouser {
+    color: #722f2f;
+}
+
 #paging-textnext,
 #paging-textprev,
 #paging-prev,

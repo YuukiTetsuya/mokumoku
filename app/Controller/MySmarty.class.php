@@ -34,7 +34,7 @@ class MySmarty extends Smarty
                 $logouted = str_replace($datePlace, $dateYmd, $logouted);
                 $user['dateLogout'] = $logouted.'秒';
                 $user['status'] = e($_SESSION['currentUser']['status']);
-                $status['login'] = $user['user_id']."さん";
+                $status['login'] = "ユーザー　";
                 $status['logout'] = 'ログアウト';
             } else {
                 $user['id'] = e($_SESSION['currentUser']['id']);
@@ -45,16 +45,15 @@ class MySmarty extends Smarty
                 $logouted = str_replace($datePlace, $dateYmd, $logouted);
                 $user['dateLogout'] = $logouted.'秒';
                 $user['status'] = e($_SESSION['currentUser']['status']);
-                $status['login'] = "ログイン";
-                $status['new'] = "会員登録";
+                $status['login'] = "ログイン　";
+                $status['new'] = "会員登録　";
                 $_SESSION['currentUser'] = null;
             }
         } else {
-            $status['login'] = 'ログイン';
-            $status['new'] = '会員登録';
+            $status['login'] = 'ログイン　';
+            $status['new'] = '会員登録　';
         }
         $this->assign('title', 'MokuMokuApp');
-        $this->assign('leftlogo', '左サイトロゴ');
         $this->assign('login', $status['login']);
         $this->assign('logout', $status['logout']);
         $this->assign('new', $status['new']);

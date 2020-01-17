@@ -16,7 +16,7 @@ header {
 
 header>.container>.title {
     width: 100%;
-    display: inline-block;
+    padding-top: 10px;
     text-align: center;
     font-size: 26px;
     font-weight: bold;
@@ -29,4 +29,13 @@ header>.container>.title a:visited {
 a {
     color: #722F2F;
     text-decoration: none;
+}
+
+img#logo {
+    margin-right: 10px;
+}
+
+a#header-login {
+    display: inline-block;
+    padding: 5px 0 5px 0;
 }

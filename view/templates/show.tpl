@@ -35,7 +35,11 @@
                             </span>
                         </span>
                         <div class="subtitle" id="weight">作成者</div>
-                        <span>{$post.user_id}</span>
+                        {if $post.user_id neq '非会員'}
+                        <span><a href="users/author?id={$post.post_id}">{$post.user_id}</a></span>
+                        {else}
+                        <span class="nouser">{$post.user_id}</span>
+                        {/if}
                         <span></span>
                     </div>
                     <div class="post-bottom">

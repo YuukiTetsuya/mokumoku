@@ -12,7 +12,7 @@
                                     placeholder="{$userid}">
                             </div>
                             <span id="passwordNo">{$passwordNo}</span>
-                            <div class="form-user"><input class="form-input" type="text" name="password"
+                            <div class="form-user"><input class="form-input" type="password" name="password"
                                     placeholder="{$pass}">
                             </div>
                             <input type="submit" name="button-user" id="button-user" value="ログインする">
