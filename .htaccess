@@ -5,9 +5,9 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
 # index.html/index.phpはルートに移動
 RewriteCond %{REQUEST_URI} index(.*)\.html
-RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
+RewriteRule ^(.*)$ /mokumoku/ [R=301,L]
 RewriteCond %{REQUEST_URI} /mokumoku/index.php
-RewriteRule ^(.*)$ http://localhost/mokumoku/ [R=301,L]
+RewriteRule ^(.*)$ /mokumoku/ [R=301,L]
 
 # ファイル一覧機能を無効にする命令
 Options -Indexes
