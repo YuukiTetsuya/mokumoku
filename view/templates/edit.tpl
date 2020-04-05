@@ -34,11 +34,13 @@
                                 </tr>
                                 {/foreach}
                             </table>
+                            <input type="hidden" name="token" value="{$token}">
+                            <input type="hidden" name="post_id" value="{$post.post_id}">
+                            <div class="button-center">
+                                <input type="submit" id="submit" value="編集する" class="button">
+                            </div>
                         </div>
                         <div class="post-right"></div>
-                        <input type="hidden" name="token" value="{$token}">
-                        <input type="hidden" name="post_id" value="{$post.post_id}">
-                        <input type="submit" id="submit" value="編集する" class="button">
                     </form>
                     <div class="post-bottom">
                     </div>

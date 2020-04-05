@@ -81,7 +81,11 @@ main>.container table textarea {
     resize: none;
 }
 
-main>.container>form>.button {
+.button-center {
+    text-align: center;
+}
+
+.button {
     border-radius: 5%;
     z-index: 1;
     /* 角丸       */
@@ -108,7 +112,7 @@ main>.container>form>.button {
     outline: none;
 }
 
-main>.container>form>.button:hover {
+.button:hover {
     box-shadow: none;
     /* カーソル時の影消去 */
     color: #722F2F;
@@ -154,7 +158,7 @@ main>.container table ::placeholder {
 }
 
 .index-right {
-    margin-top: 20px;
+    margin-top: 23px;
     float: right;
     width: 30%;
 }

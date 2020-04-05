@@ -54,6 +54,7 @@ class MySmarty extends Smarty
             $status['new'] = '会員登録　';
         }
         $this->assign('title', 'MokuMokuApp');
+        $this->assign('mokumokudb', 'もくもくデータベース');
         $this->assign('login', $status['login']);
         $this->assign('logout', $status['logout']);
         $this->assign('new', $status['new']);

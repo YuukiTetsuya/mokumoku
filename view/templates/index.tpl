@@ -40,24 +40,25 @@
                     </table>
                     <input type="hidden" name="token" value="{$token}">
                     <input type="hidden" name="post_id" value="{$post_id}">
-                    <input type="submit" id="submit" value="作成する" class="button">
+                    <div class="button-center">
+                        <input type="submit" id="submit" value="作成する" class="button">
+                    </div>
                 </form>
             </div>
             <div class="index-right">
                 <div class="subtitle">{$howtoTitle}</div>
                 <div class="about">
-                    MokuMokuAppは、もくもく会の情報を気軽に共有できるWebサービスです。<br>「気軽に」がポイントで、以下のような人に向いています。<br>
+                    MokuMokuAppは、もくもく会の情報を気軽に共有できるWebサービスです。<br>「気軽に」がポイントで、以下のような方にオススメのサイトです。<br>
                     <ul>
                         <li>突発的に募集したい</li>
                         <li>最低限の情報を共有したい</li>
                         <li>円滑に進行したい</li>
                     </ul>
-                    【製作の背景】<br>
-                    もくもく会開催時、参加者にスケジュールやルール、Wifiの情報を共有するのが面倒だと感じていました。<br>「1ページで気軽に情報を共有したい」<br>と思ったのがキッカケです。<br>
-                    SNSシェア機能やLTタイマーなど、便利な機能もあります。
                 </div>
-                <div class="subtitle">みんなの投稿↓↓<br>
-                    <a class="mokudb" href="view/storage">もくもくデータベース</a>
+                <div class="subtitle">製作の背景</div>
+                <div class="about">
+                    もくもく会開催時、参加者にスケジュールやルール、Wifiの情報を共有するのが面倒だと感じていました。<br><br>「1ページで気軽に情報を共有したい」<br>と思ったのがキッカケです。<br><br>
+                    SNSシェア機能やLTタイマーなど、便利な機能も揃えています。
                 </div>
             </div>
         </div>
