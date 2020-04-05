@@ -17,12 +17,12 @@ if (isset($_SESSION['createdUser'])) {
     } elseif ($_SESSION['createdUser'] === 'notUnique') {
         $createUserMsg = '同一のID名が存在します';
     } elseif ($_SESSION['createdUser'] === 'check') {
-        $createUserMsg = 'ID名に不正な文字が入力されています';
+        $createUserMsg = 'ID名に不正な文字列が含まれています';
     }
     if ($_SESSION['createdPass'] === 'nullPass') {
         $createPassMsg = 'パスワードが空です';
     } elseif ($_SESSION['createdPass'] === 'enoughPass') {
-        $createPassMsg = 'パスワードは6文字以上を入力してください';
+        $createPassMsg = 'パスワードは8文字以上で入力してください';
     }
 }
 $_SESSION['createdUser'] = null;

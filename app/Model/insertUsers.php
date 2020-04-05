@@ -21,7 +21,7 @@ try {
     $stu->bindParam(':user_id', $userid, PDO::PARAM_STR);
     $stu->execute();
     $result = $stu->fetch(PDO::FETCH_ASSOC);
-    if ($result === false && mb_strlen($userid) <= 64 && $passwordUser !== '' && mb_strlen($passwordUser) >= 6) {
+    if ($result === false && mb_strlen($userid) <= 64 && $passwordUser !== '' && mb_strlen($passwordUser) >= 8) {
         if (preg_match('/^[\w]+$/', $userid)) {
             $id = null;
             $stt = $db->prepare('INSERT INTO users(id, user_id, password) VALUES(:id, :user_id, :password)');
@@ -43,7 +43,7 @@ try {
         }
         if ($passwordUser === '') {
             $_SESSION['createdPass'] = 'nullPass';
-        } elseif (mb_strlen($passwordUser) < 6) {
+        } elseif (mb_strlen($passwordUser) < 8) {
             $_SESSION['createdPass'] = 'enoughPass';
         }
     }
