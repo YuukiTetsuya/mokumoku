@@ -22,8 +22,8 @@
                             {continue}
                             {/if}
                             <td {if $agendakey eq 'contents' } valign="top" {elseif $agendakey eq 'pass' } class="pass"
-                                {/if}>{$agenda} {if $agendakey eq 'mokumokuname' } <span class="required">
-                                ※必須</span>{/if}
+                                {/if}>{$agenda} {if $agendakey eq 'mokumokuname' } <br><span class="required">
+                                    ※必須</span>{/if}
                             </td>
                             <td>
                                 {if $agendakey eq 'contents'}
@@ -40,7 +40,7 @@
                     </table>
                     <input type="hidden" name="token" value="{$token}">
                     <input type="hidden" name="post_id" value="{$post_id}">
-                    <div class="button-center">
+                    <div class="button-create">
                         <input type="submit" id="submit" value="作成する" class="button">
                     </div>
                 </form>

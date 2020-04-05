@@ -21,6 +21,7 @@ body {
 
     main>.container>.post>.post-main {
         padding-left: 50px !important;
+        margin-bottom: 40px !important;
     }
 }
 
@@ -45,9 +46,21 @@ body {
     .index-right {
         width: 100% !important;
     }
+
+    .post-main {
+        margin-bottom: 50px !important;
+    }
+
+    td {
+        font-size: 14px;
+    }
 }
 
 @media(max-width: 400px) {}
+
+.br-sp {
+    display: none;
+}
 
 main {
     height: 100%;
@@ -224,6 +237,10 @@ textarea {
 
 .tooltip:hover {
     color: #722F2F;
+}
+
+.post-main {
+    margin-bottom: 30px;
 }
 
 main>.container>.post>.post-main {
