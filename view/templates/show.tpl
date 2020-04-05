@@ -27,20 +27,24 @@
                         <div class="mokudb"><a href="../view/storage">もくもくデータベース</a></div>
                     </div>
                     <div class="post-right">
-                        <span id="wifi">
-                            <span class="subtitle" id="weight">Wifi</span><br>
-                            <span class="ssid-pass">
-                                {$agendas.ssid} {$post.ssid}<br>
-                                {$agendas.pass} {$post.pass}
+                        <ul>
+
+                            <span id="wifi">
+                                <span class="subtitle" id="weight">Wifi</span><br>
+                                <span class="ssid-pass">
+                                    {$agendas.ssid} {$post.ssid}<br>
+                                    {$agendas.pass} {$post.pass}
+                                </span>
                             </span>
-                        </span>
-                        <div class="subtitle" id="weight">作成者</div>
-                        {if $post.user_id neq '非会員'}
-                        <span><a href="users/author?id={$post.post_id}">{$post.user_id}</a></span>
-                        {else}
-                        <span class="nouser">{$post.user_id}</span>
-                        {/if}
-                        <span></span>
+                        </ul>
+                        <ul>
+                            <div class="subtitle" id="weight">作成者</div>
+                            {if $post.user_id neq '非会員'}
+                            <span><a href="users/author?id={$post.post_id}">{$post.user_id}</a></span>
+                            {else}
+                            <span class="nouser">{$post.user_id}</span>
+                            {/if}
+                        </ul>
                     </div>
                     <div class="post-bottom">
                     </div>

@@ -197,6 +197,7 @@ textarea {
 
 .nouser {
     color: #722f2f;
+    word-wrap: break-word;
 }
 
 #paging-textnext,
@@ -301,6 +302,7 @@ main>.container>.post>.storage {
 
 main>.container>.post>.post-main>.post-left {
     float: left;
+    width: 70%;
 }
 
 main>.container>.post>.edit {
@@ -309,10 +311,12 @@ main>.container>.post>.edit {
 
 main>.container>.post>.post-main>form>.post-left {
     float: left;
+    width: 70%;
 }
 
 main>.container>.post>.post-main>.post-right {
     float: right;
+    width: 30%;
 }
 
 main>.container>.post>.post-main>.post-bottom {
@@ -371,6 +375,10 @@ main>.container>.post>.post-main>form>.post-left>.delete {
     font-size: 24px;
 }
 
+main>.container>.post>.post-main>.post-right>ul {
+    margin-top: 0px;
+}
+
 main>.container>.post>.post-main>.post-right>#wifi {
     float: right;
 }
@@ -381,10 +389,12 @@ main>.container>.post>.post-main>form>.post-right>#wifi {
 
 main>.container>.post>.post-main>.post-right>#wifi>.ssid-pass {
     font-size: 18px;
+    word-wrap: break-word;
 }
 
 main>.container>.post>.post-main>form>.post-right>#wifi>.ssid-pass {
     font-size: 18px;
+    word-wrap: break-word;
 }
 
 .slider {
