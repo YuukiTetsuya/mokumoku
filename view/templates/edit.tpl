@@ -19,7 +19,9 @@
                                     {continue}
                                     {/if}
                                     <td {if $agendakey eq 'contents' } valign="top" {elseif $agendakey eq 'pass' }
-                                        class="pass" {/if}>{$agenda} </td> <td>
+                                        class="pass" {/if}>{$agenda} {if $agendakey eq 'mokumokuname' } <span
+                                        class="required">※必須</span>{/if}</td>
+                                    <td>
                                         {if $agendakey eq 'contents'}
                                         <textarea name="{$agendakey}" id="contents" cols="60"
                                             rows="10">{$post.$agendakey}</textarea>

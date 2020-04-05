@@ -130,6 +130,14 @@ main>.container table ::placeholder {
     color: red;
 }
 
+.required {
+    color: white;
+    background: #722F2F;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 2px;
+}
+
 .mokudb {
     font-size: 24px;
 }

@@ -2,7 +2,7 @@
 <?php
 // サブタイトル表示用の配列
     $agendas = [
-        'title' => 'もくもく会概要',
+        'title' => 'もくもく会を投稿する',
         'mokumokuname' => 'もくもく会名',
         'schedule' => 'タイムスケジュール',
         'contents' => 'コンテンツ',
