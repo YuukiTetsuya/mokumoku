@@ -40,8 +40,6 @@
             </form>
             <p class="mokudb"><a href="view/storage">もくもくデータベース</a></p>
             <ul class="slider">
-                <li><a href="#"><img src="webroot/image/IMG_5314.JPG" alt="image01"></a></li>
-                <li><a href="#"><img src="webroot/image/php.jpg" alt="image02"></a></li>
             </ul>
         </div>
     </main>
