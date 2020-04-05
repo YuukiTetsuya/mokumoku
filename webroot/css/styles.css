@@ -37,12 +37,22 @@ body {
     main>.container>.post>.post-main {
         padding-left: 0px !important;
     }
+
+    .index-main {
+        width: 100% !important;
+    }
+
+    .index-right {
+        width: 100% !important;
+    }
 }
 
 @media(max-width: 400px) {}
 
 main {
     height: 100%;
+    width: 100%;
+    display: inline-block;
     padding-top: 50px;
     background-color: #f7f7f7;
     color: #545454;
@@ -138,9 +148,26 @@ main>.container table ::placeholder {
     border-radius: 2px;
 }
 
+.index-main {
+    float: left;
+    width: 70%;
+}
+
+.index-right {
+    margin-top: 20px;
+    float: right;
+    width: 30%;
+}
+
+.about {
+    word-wrap: break-word;
+    padding: 0 0 0 20px;
+}
+
 .mokudb {
     font-size: 24px;
 }
+
 
 .paging {
     text-align: center;
